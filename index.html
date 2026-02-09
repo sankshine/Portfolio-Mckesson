@@ -784,18 +784,18 @@ section {
 .tl-highlight strong { color: var(--accent-bright); }
 
 /* ═══════════════════════════════════════════
-   GITHUB SECTION
+   GITHUB PROJECTS SECTION
    ═══════════════════════════════════════════ */
-.github-section {
+.github-projects-section {
   text-align: center;
 }
-.github-grid {
+.github-projects-grid {
   display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
   gap: 1.5rem;
   margin-top: 2rem;
 }
-.github-card {
+.github-project-card {
   background: var(--bg-card);
   border: 1px solid var(--border);
   border-radius: 12px;
@@ -804,14 +804,17 @@ section {
   color: var(--text-primary);
   transition: all 0.3s var(--ease-out-expo);
   text-align: left;
+  display: flex;
+  flex-direction: column;
+  height: 100%;
 }
-.github-card:hover {
+.github-project-card:hover {
   border-color: var(--green);
   background: var(--bg-card-hover);
   transform: translateY(-3px);
   box-shadow: 0 10px 30px rgba(0,0,0,0.2);
 }
-.github-card h4 {
+.github-project-card h4 {
   font-family: var(--font-display);
   font-size: 1.1rem;
   margin-bottom: 0.8rem;
@@ -819,28 +822,35 @@ section {
   align-items: center;
   gap: 0.5rem;
 }
-.github-card h4 svg {
+.github-project-card h4 svg {
   width: 18px;
   height: 18px;
   fill: currentColor;
 }
-.github-card p {
+.github-project-card p {
   font-size: 0.85rem;
   color: var(--text-secondary);
   line-height: 1.6;
   margin-bottom: 1rem;
+  flex-grow: 1;
 }
-.github-stats {
-  display: flex;
-  gap: 1rem;
+.project-type-badge {
+  display: inline-block;
   font-family: var(--font-mono);
-  font-size: 0.75rem;
-  color: var(--text-muted);
+  font-size: 0.65rem;
+  letter-spacing: 0.05em;
+  text-transform: uppercase;
+  padding: 0.2rem 0.6rem;
+  border-radius: 4px;
+  margin-top: auto;
 }
-.github-stats span {
-  display: flex;
-  align-items: center;
-  gap: 0.3rem;
+.project-type-badge.data-project {
+  background: rgba(59, 111, 165, 0.1);
+  color: var(--cyan);
+}
+.project-type-badge.ai-project {
+  background: rgba(95, 163, 160, 0.15);
+  color: var(--accent-bright);
 }
 
 /* ═══════════════════════════════════════════
@@ -965,6 +975,7 @@ footer {
     <a href="#data-projects">Data Projects</a>
     <a href="#ai-projects">AI Projects</a>
     <a href="#experience">Experience</a>
+    <a href="#github-projects">GitHub Projects</a>
     <a href="https://github.com/sankshine" target="_blank" class="nav-github"><svg viewBox="0 0 16 16"><path d="M8 0C3.58 0 0 3.58 0 8c0 3.54 2.29 6.53 5.47 7.59.4.07.55-.17.55-.38 0-.19-.01-.82-.01-1.49-2.01.37-2.53-.49-2.69-.94-.09-.23-.48-.94-.82-1.13-.28-.15-.68-.52-.01-.53.63-.01 1.08.58 1.23.82.72 1.21 1.87.87 2.33.66.07-.52.28-.87.51-1.07-1.78-.2-3.64-.89-3.64-3.95 0-.87.31-1.59.82-2.15-.08-.2-.36-1.02.08-2.12 0 0 .67-.21 2.2.82.64-.18 1.32-.27 2-.27.68 0 1.36.09 2 .27 1.53-1.04 2.2-.82 2.2-.82.44 1.1.16 1.92.08 2.12.51.56.82 1.27.82 2.15 0 3.07-1.87 3.75-3.65 3.95.29.25.54.73.54 1.48 0 1.07-.01 1.93-.01 2.2 0 .21.15.46.55.38A8.013 8.013 0 0016 8c0-4.42-3.58-8-8-8z"/></svg> GitHub</a>
     <a href="#contact" class="nav-cta">Contact</a>
   </div>
@@ -975,7 +986,7 @@ footer {
 
 <!-- ═══════════════ HERO ═══════════════ -->
 <header class="hero">
-  <div class="hero-eyebrow"><span class="dot"></span> Sr. Technical Product Manager</div>
+  <div class="hero-eyebrow"><span class="dot"></span> Sr. Technical Product Manager Candidate @ Mckesson</div>
   <h1>
     <span class="line">Sana Khan</span>
     <span class="line"><span class="gradient">Data AI/ML</span></span>
@@ -1322,6 +1333,75 @@ footer {
 
 <div class="section-divider"></div>
 
+<!-- ═══════════════ GITHUB PROJECTS ═══════════════ -->
+<section id="github-projects" class="github-projects-section">
+  <div class="reveal">
+    <span class="section-label">// GitHub Projects</span>
+    <h2 class="section-title">Featured Data & AI Projects</h2>
+    <p class="section-desc">Explore my technical implementations and open-source contributions. Click any project to view on GitHub.</p>
+  </div>
+  
+  <div class="github-projects-grid reveal reveal-delay-1">
+    <!-- Data Projects -->
+    <a href="https://github.com/sankshine" target="_blank" class="github-project-card">
+      <h4><svg viewBox="0 0 16 16"><path d="M8 0C3.58 0 0 3.58 0 8c0 3.54 2.29 6.53 5.47 7.59.4.07.55-.17.55-.38 0-.19-.01-.82-.01-1.49-2.01.37-2.53-.49-2.69-.94-.09-.23-.48-.94-.82-1.13-.28-.15-.68-.52-.01-.53.63-.01 1.08.58 1.23.82.72 1.21 1.87.87 2.33.66.07-.52.28-.87.51-1.07-1.78-.2-3.64-.89-3.64-3.95 0-.87.31-1.59.82-2.15-.08-.2-.36-1.02.08-2.12 0 0 .67-.21 2.2.82.64-.18 1.32-.27 2-.27.68 0 1.36.09 2 .27 1.53-1.04 2.2-.82 2.2-.82.44 1.1.16 1.92.08 2.12.51.56.82 1.27.82 2.15 0 3.07-1.87 3.75-3.65 3.95.29.25.54.73.54 1.48 0 1.07-.01 1.93-.01 2.2 0 .21.15.46.55.38A8.013 8.013 0 0016 8c0-4.42-3.58-8-8-8z"/></svg> GTM Strategy for 5 FinOps Data Products</h4>
+      <p>Complete go-to-market strategy framework for 5 enterprise FinOps data products, including user segmentation, pricing models, and adoption metrics.</p>
+      <div class="project-type-badge data-project">Data Project</div>
+    </a>
+    
+    <a href="https://github.com/sankshine" target="_blank" class="github-project-card">
+      <h4><svg viewBox="0 0 16 16"><path d="M8 0C3.58 0 0 3.58 0 8c0 3.54 2.29 6.53 5.47 7.59.4.07.55-.17.55-.38 0-.19-.01-.82-.01-1.49-2.01.37-2.53-.49-2.69-.94-.09-.23-.48-.94-.82-1.13-.28-.15-.68-.52-.01-.53.63-.01 1.08.58 1.23.82.72 1.21 1.87.87 2.33.66.07-.52.28-.87.51-1.07-1.78-.2-3.64-.89-3.64-3.95 0-.87.31-1.59.82-2.15-.08-.2-.36-1.02.08-2.12 0 0 .67-.21 2.2.82.64-.18 1.32-.27 2-.27.68 0 1.36.09 2 .27 1.53-1.04 2.2-.82 2.2-.82.44 1.1.16 1.92.08 2.12.51.56.82 1.27.82 2.15 0 3.07-1.87 3.75-3.65 3.95.29.25.54.73.54 1.48 0 1.07-.01 1.93-.01 2.2 0 .21.15.46.55.38A8.013 8.013 0 0016 8c0-4.42-3.58-8-8-8z"/></svg> On-prem to GCP Migration</h4>
+      <p>Complete migration pipeline from on-prem Hadoop/Oracle to GCP BigQuery with IAM security, HIPAA compliance, and Collibra metadata cataloging.</p>
+      <div class="project-type-badge data-project">Data Project</div>
+    </a>
+    
+    <a href="https://github.com/sankshine" target="_blank" class="github-project-card">
+      <h4><svg viewBox="0 0 16 16"><path d="M8 0C3.58 0 0 3.58 0 8c0 3.54 2.29 6.53 5.47 7.59.4.07.55-.17.55-.38 0-.19-.01-.82-.01-1.49-2.01.37-2.53-.49-2.69-.94-.09-.23-.48-.94-.82-1.13-.28-.15-.68-.52-.01-.53.63-.01 1.08.58 1.23.82.72 1.21 1.87.87 2.33.66.07-.52.28-.87.51-1.07-1.78-.2-3.64-.89-3.64-3.95 0-.87.31-1.59.82-2.15-.08-.2-.36-1.02.08-2.12 0 0 .67-.21 2.2.82.64-.18 1.32-.27 2-.27.68 0 1.36.09 2 .27 1.53-1.04 2.2-.82 2.2-.82.44 1.1.16 1.92.08 2.12.51.56.82 1.27.82 2.15 0 3.07-1.87 3.75-3.65 3.95.29.25.54.73.54 1.48 0 1.07-.01 1.93-.01 2.2 0 .21.15.46.55.38A8.013 8.013 0 0016 8c0-4.42-3.58-8-8-8z"/></svg> Airflow DAGs Orchestration</h4>
+      <p>100+ production-grade Airflow DAGs for data pipeline orchestration, monitoring dashboards, and automated Slack/email alerting systems.</p>
+      <div class="project-type-badge data-project">Data Project</div>
+    </a>
+    
+    <a href="https://github.com/sankshine" target="_blank" class="github-project-card">
+      <h4><svg viewBox="0 0 16 16"><path d="M8 0C3.58 0 0 3.58 0 8c0 3.54 2.29 6.53 5.47 7.59.4.07.55-.17.55-.38 0-.19-.01-.82-.01-1.49-2.01.37-2.53-.49-2.69-.94-.09-.23-.48-.94-.82-1.13-.28-.15-.68-.52-.01-.53.63-.01 1.08.58 1.23.82.72 1.21 1.87.87 2.33.66.07-.52.28-.87.51-1.07-1.78-.2-3.64-.89-3.64-3.95 0-.87.31-1.59.82-2.15-.08-.2-.36-1.02.08-2.12 0 0 .67-.21 2.2.82.64-.18 1.32-.27 2-.27.68 0 1.36.09 2 .27 1.53-1.04 2.2-.82 2.2-.82.44 1.1.16 1.92.08 2.12.51.56.82 1.27.82 2.15 0 3.07-1.87 3.75-3.65 3.95.29.25.54.73.54 1.48 0 1.07-.01 1.93-.01 2.2 0 .21.15.46.55.38A8.013 8.013 0 0016 8c0-4.42-3.58-8-8-8z"/></svg> Kafka Streaming Pipelines</h4>
+      <p>Real-time streaming data pipelines using Apache Kafka for high-throughput event processing with ELK stack integration and performance optimization.</p>
+      <div class="project-type-badge data-project">Data Project</div>
+    </a>
+    
+    <!-- AI Projects -->
+    <a href="https://github.com/sankshine" target="_blank" class="github-project-card">
+      <h4><svg viewBox="0 0 16 16"><path d="M8 0C3.58 0 0 3.58 0 8c0 3.54 2.29 6.53 5.47 7.59.4.07.55-.17.55-.38 0-.19-.01-.82-.01-1.49-2.01.37-2.53-.49-2.69-.94-.09-.23-.48-.94-.82-1.13-.28-.15-.68-.52-.01-.53.63-.01 1.08.58 1.23.82.72 1.21 1.87.87 2.33.66.07-.52.28-.87.51-1.07-1.78-.2-3.64-.89-3.64-3.95 0-.87.31-1.59.82-2.15-.08-.2-.36-1.02.08-2.12 0 0 .67-.21 2.2.82.64-.18 1.32-.27 2-.27.68 0 1.36.09 2 .27 1.53-1.04 2.2-.82 2.2-.82.44 1.1.16 1.92.08 2.12.51.56.82 1.27.82 2.15 0 3.07-1.87 3.75-3.65 3.95.29.25.54.73.54 1.48 0 1.07-.01 1.93-.01 2.2 0 .21.15.46.55.38A8.013 8.013 0 0016 8c0-4.42-3.58-8-8-8z"/></svg> Real Estate Agentic AI</h4>
+      <p>Multi-agent AI solution for real estate document processing using LangGraph orchestration and Milvus vector database for intelligent automation.</p>
+      <div class="project-type-badge ai-project">AI Project</div>
+    </a>
+    
+    <a href="https://github.com/sankshine" target="_blank" class="github-project-card">
+      <h4><svg viewBox="0 0 16 16"><path d="M8 0C3.58 0 0 3.58 0 8c0 3.54 2.29 6.53 5.47 7.59.4.07.55-.17.55-.38 0-.19-.01-.82-.01-1.49-2.01.37-2.53-.49-2.69-.94-.09-.23-.48-.94-.82-1.13-.28-.15-.68-.52-.01-.53.63-.01 1.08.58 1.23.82.72 1.21 1.87.87 2.33.66.07-.52.28-.87.51-1.07-1.78-.2-3.64-.89-3.64-3.95 0-.87.31-1.59.82-2.15-.08-.2-.36-1.02.08-2.12 0 0 .67-.21 2.2.82.64-.18 1.32-.27 2-.27.68 0 1.36.09 2 .27 1.53-1.04 2.2-.82 2.2-.82.44 1.1.16 1.92.08 2.12.51.56.82 1.27.82 2.15 0 3.07-1.87 3.75-3.65 3.95.29.25.54.73.54 1.48 0 1.07-.01 1.93-.01 2.2 0 .21.15.46.55.38A8.013 8.013 0 0016 8c0-4.42-3.58-8-8-8z"/></svg> Gen-AI Copilot for Tickets</h4>
+      <p>Generative AI co-pilot for IT support ticket resolution using RAG architecture with multi-step validation layers for accurate responses.</p>
+      <div class="project-type-badge ai-project">AI Project</div>
+    </a>
+    
+    <a href="https://github.com/sankshine" target="_blank" class="github-project-card">
+      <h4><svg viewBox="0 0 16 16"><path d="M8 0C3.58 0 0 3.58 0 8c0 3.54 2.29 6.53 5.47 7.59.4.07.55-.17.55-.38 0-.19-.01-.82-.01-1.49-2.01.37-2.53-.49-2.69-.94-.09-.23-.48-.94-.82-1.13-.28-.15-.68-.52-.01-.53.63-.01 1.08.58 1.23.82.72 1.21 1.87.87 2.33.66.07-.52.28-.87.51-1.07-1.78-.2-3.64-.89-3.64-3.95 0-.87.31-1.59.82-2.15-.08-.2-.36-1.02.08-2.12 0 0 .67-.21 2.2.82.64-.18 1.32-.27 2-.27.68 0 1.36.09 2 .27 1.53-1.04 2.2-.82 2.2-.82.44 1.1.16 1.92.08 2.12.51.56.82 1.27.82 2.15 0 3.07-1.87 3.75-3.65 3.95.29.25.54.73.54 1.48 0 1.07-.01 1.93-.01 2.2 0 .21.15.46.55.38A8.013 8.013 0 0016 8c0-4.42-3.58-8-8-8z"/></svg> $500 Data Usage Alert Automation</h4>
+      <p>n8n workflow automation for monitoring data usage costs with automated alerts at $500 thresholds and escalation procedures.</p>
+      <div class="project-type-badge ai-project">AI Project</div>
+    </a>
+    
+    <a href="https://github.com/sankshine" target="_blank" class="github-project-card">
+      <h4><svg viewBox="0 0 16 16"><path d="M8 0C3.58 0 0 3.58 0 8c0 3.54 2.29 6.53 5.47 7.59.4.07.55-.17.55-.38 0-.19-.01-.82-.01-1.49-2.01.37-2.53-.49-2.69-.94-.09-.23-.48-.94-.82-1.13-.28-.15-.68-.52-.01-.53.63-.01 1.08.58 1.23.82.72 1.21 1.87.87 2.33.66.07-.52.28-.87.51-1.07-1.78-.2-3.64-.89-3.64-3.95 0-.87.31-1.59.82-2.15-.08-.2-.36-1.02.08-2.12 0 0 .67-.21 2.2.82.64-.18 1.32-.27 2-.27.68 0 1.36.09 2 .27 1.53-1.04 2.2-.82 2.2-.82.44 1.1.16 1.92.08 2.12.51.56.82 1.27.82 2.15 0 3.07-1.87 3.75-3.65 3.95.29.25.54.73.54 1.48 0 1.07-.01 1.93-.01 2.2 0 .21.15.46.55.38A8.013 8.013 0 0016 8c0-4.42-3.58-8-8-8z"/></svg> Alex AI Chatbot</h4>
+      <p>Enterprise-grade AI chatbot with natural language processing capabilities for customer service and internal knowledge base queries.</p>
+      <div class="project-type-badge ai-project">AI Project</div>
+    </a>
+    
+    <a href="https://github.com/sankshine" target="_blank" class="github-project-card">
+      <h4><svg viewBox="0 0 16 16"><path d="M8 0C3.58 0 0 3.58 0 8c0 3.54 2.29 6.53 5.47 7.59.4.07.55-.17.55-.38 0-.19-.01-.82-.01-1.49-2.01.37-2.53-.49-2.69-.94-.09-.23-.48-.94-.82-1.13-.28-.15-.68-.52-.01-.53.63-.01 1.08.58 1.23.82.72 1.21 1.87.87 2.33.66.07-.52.28-.87.51-1.07-1.78-.2-3.64-.89-3.64-3.95 0-.87.31-1.59.82-2.15-.08-.2-.36-1.02.08-2.12 0 0 .67-.21 2.2.82.64-.18 1.32-.27 2-.27.68 0 1.36.09 2 .27 1.53-1.04 2.2-.82 2.2-.82.44 1.1.16 1.92.08 2.12.51.56.82 1.27.82 2.15 0 3.07-1.87 3.75-3.65 3.95.29.25.54.73.54 1.48 0 1.07-.01 1.93-.01 2.2 0 .21.15.46.55.38A8.013 8.013 0 0016 8c0-4.42-3.58-8-8-8z"/></svg> PaLM2 Based Data Classifier</h4>
+      <p>Fine-tuned PaLM2 model for automated data classification, tagging, and categorization with healthcare-specific compliance layers.</p>
+      <div class="project-type-badge ai-project">AI Project</div>
+    </a>
+  </div>
+</section>
+
+<div class="section-divider"></div>
+
 <!-- ═══════════════ CONTACT ═══════════════ -->
 <section id="contact" class="contact-section">
   <div class="reveal">
@@ -1363,7 +1443,7 @@ footer {
 
 <!-- ═══════════════ FOOTER ═══════════════ -->
 <footer>
-  © 2026 Sana Khan · Sr. Technical Product Manager Candidate · Healthcare AI/ML · Canada
+  © 2026 Sana Khan · Sr. Technical Product Manager Candidate @ Mckesson· Healthcare AI/ML · Canada
 </footer>
 
 <!-- ═══════════════ SCRIPTS ═══════════════ -->
