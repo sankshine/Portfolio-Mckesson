@@ -1,1087 +1,3 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Sana Khan — Sr. Technical Product Manager Candidate | Mckesson</title>
-<link rel="preconnect" href="https://fonts.googleapis.com">
-<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Syne:wght@400;500;600;700;800&family=DM+Sans:ital,opsz,wght@0,9..40,300;0,9..40,400;0,9..40,500;1,9..40,300;1,9..40,400&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
-<style>
-/* ═══════════════════════════════════════════
-   CSS VARIABLES & RESET - McKesson Palette
-   ═══════════════════════════════════════════ */
-:root {
-  --bg-primary: #0B1F3A;
-  --bg-secondary: #102A44;
-  --bg-card: #1E2E4A;
-  --bg-card-hover: #25355A;
-  --border: #2F5F8F;
-  --border-accent: #3B6FA5;
-  --text-primary: #F2F5F7;
-  --text-secondary: #C8D46A;
-  --text-muted: #7DB37A;
-  --accent: #4F8F8B;
-  --accent-bright: #5FA3A0;
-  --accent-glow: rgba(79, 143, 139, 0.15);
-  --cyan: #3B6FA5;
-  --cyan-glow: rgba(59, 111, 165, 0.1);
-  --green: #8FCF8A;
-  --orange: #D6E06F;
-  --pink: #7DB37A;
-  --font-display: 'Syne', sans-serif;
-  --font-body: 'DM Sans', sans-serif;
-  --font-mono: 'JetBrains Mono', monospace;
-  --ease-out-expo: cubic-bezier(0.16, 1, 0.3, 1);
-  --ease-out-quint: cubic-bezier(0.22, 1, 0.36, 1);
-}
-
-*, *::before, *::after { margin: 0; padding: 0; box-sizing: border-box; }
-
-html {
-  scroll-behavior: smooth;
-  scrollbar-width: thin;
-  scrollbar-color: var(--border-accent) var(--bg-primary);
-}
-
-body {
-  font-family: var(--font-body);
-  background: var(--bg-primary);
-  color: var(--text-primary);
-  overflow-x: hidden;
-  -webkit-font-smoothing: antialiased;
-}
-
-::selection {
-  background: var(--accent);
-  color: var(--text-primary);
-}
-
-/* ═══════════════════════════════════════════
-   NOISE OVERLAY & GLOBAL GRAIN
-   ═══════════════════════════════════════════ */
-body::before {
-  content: '';
-  position: fixed;
-  inset: 0;
-  z-index: 9999;
-  pointer-events: none;
-  opacity: 0.015;
-  background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 256 256' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.9' numOctaves='4' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)'/%3E%3C/svg%3E");
-  background-repeat: repeat;
-  background-size: 200px;
-}
-
-/* ═══════════════════════════════════════════
-   AMBIENT BACKGROUND GLOW - Healthcare Theme
-   ═══════════════════════════════════════════ */
-.ambient-glow {
-  position: fixed;
-  inset: 0;
-  z-index: 0;
-  pointer-events: none;
-  overflow: hidden;
-}
-.ambient-glow .orb {
-  position: absolute;
-  border-radius: 50%;
-  filter: blur(120px);
-  opacity: 0.08;
-}
-.ambient-glow .orb:nth-child(1) {
-  width: 600px; height: 600px;
-  background: var(--cyan);
-  top: -10%; left: -5%;
-  animation: float1 25s ease-in-out infinite;
-}
-.ambient-glow .orb:nth-child(2) {
-  width: 500px; height: 500px;
-  background: var(--accent);
-  bottom: -10%; right: -5%;
-  animation: float2 30s ease-in-out infinite;
-}
-.ambient-glow .orb:nth-child(3) {
-  width: 400px; height: 400px;
-  background: var(--green);
-  top: 40%; left: 50%;
-  animation: float3 20s ease-in-out infinite;
-}
-
-@keyframes float1 {
-  0%, 100% { transform: translate(0, 0) scale(1); }
-  33% { transform: translate(80px, 60px) scale(1.1); }
-  66% { transform: translate(-40px, 100px) scale(0.9); }
-}
-@keyframes float2 {
-  0%, 100% { transform: translate(0, 0) scale(1); }
-  33% { transform: translate(-60px, -80px) scale(1.15); }
-  66% { transform: translate(50px, -40px) scale(0.95); }
-}
-@keyframes float3 {
-  0%, 100% { transform: translate(0, 0) scale(1); }
-  50% { transform: translate(-100px, 60px) scale(1.1); }
-}
-
-/* ═══════════════════════════════════════════
-   NAVIGATION - Healthcare Professional
-   ═══════════════════════════════════════════ */
-nav {
-  position: fixed;
-  top: 0;
-  left: 0;
-  right: 0;
-  z-index: 1000;
-  padding: 1rem 2rem;
-  display: flex;
-  align-items: center;
-  justify-content: space-between;
-  background: rgba(11, 31, 58, 0.85);
-  backdrop-filter: blur(20px);
-  border-bottom: 1px solid var(--border);
-  transition: all 0.4s var(--ease-out-expo);
-}
-nav.scrolled {
-  padding: 0.7rem 2rem;
-  background: rgba(11, 31, 58, 0.95);
-}
-.nav-logo {
-  font-family: var(--font-display);
-  font-weight: 800;
-  font-size: 1.2rem;
-  letter-spacing: -0.02em;
-  color: var(--text-primary);
-  text-decoration: none;
-}
-.nav-logo span { color: var(--green); }
-.nav-links { display: flex; gap: 2rem; align-items: center; }
-.nav-links a {
-  font-family: var(--font-mono);
-  font-size: 0.75rem;
-  letter-spacing: 0.06em;
-  text-transform: uppercase;
-  color: var(--text-secondary);
-  text-decoration: none;
-  transition: color 0.3s;
-  position: relative;
-}
-.nav-links a::after {
-  content: '';
-  position: absolute;
-  bottom: -4px;
-  left: 0;
-  width: 0;
-  height: 1px;
-  background: var(--green);
-  transition: width 0.3s var(--ease-out-expo);
-}
-.nav-links a:hover { color: var(--text-primary); }
-.nav-links a:hover::after { width: 100%; }
-
-.nav-cta {
-  background: var(--accent) !important;
-  color: var(--text-primary) !important;
-  padding: 0.5rem 1.2rem;
-  border-radius: 6px;
-  transition: all 0.3s !important;
-  font-weight: 500 !important;
-}
-.nav-cta:hover {
-  background: var(--accent-bright) !important;
-  transform: translateY(-1px);
-  box-shadow: 0 4px 20px var(--accent-glow);
-}
-.nav-cta::after { display: none !important; }
-
-.nav-github {
-  display: inline-flex;
-  align-items: center;
-  gap: 0.4rem;
-}
-.nav-github svg {
-  width: 14px;
-  height: 14px;
-  fill: currentColor;
-  transition: fill 0.3s;
-}
-.nav-github:hover svg { fill: var(--text-primary); }
-
-.nav-toggle { display: none; background: none; border: none; cursor: pointer; padding: 0.5rem; }
-.nav-toggle span { display: block; width: 22px; height: 2px; background: var(--text-secondary); margin: 5px 0; transition: all 0.3s; }
-
-@media (max-width: 768px) {
-  .nav-toggle { display: block; }
-  .nav-links {
-    position: fixed; top: 0; right: -100%; width: 280px; height: 100vh;
-    flex-direction: column; justify-content: center; gap: 2rem;
-    background: var(--bg-secondary); border-left: 1px solid var(--border);
-    padding: 2rem; transition: right 0.4s var(--ease-out-expo);
-  }
-  .nav-links.open { right: 0; }
-  .nav-links a { font-size: 0.9rem; }
-}
-
-/* ═══════════════════════════════════════════
-   HERO - Healthcare Product Leader
-   ═══════════════════════════════════════════ */
-.hero {
-  position: relative;
-  z-index: 1;
-  min-height: 100vh;
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-  padding: 8rem 2rem 4rem;
-  max-width: 1200px;
-  margin: 0 auto;
-}
-
-.hero-eyebrow {
-  font-family: var(--font-mono);
-  font-size: 0.8rem;
-  letter-spacing: 0.15em;
-  text-transform: uppercase;
-  color: var(--green);
-  margin-bottom: 1.5rem;
-  opacity: 0;
-  animation: fadeUp 0.8s var(--ease-out-expo) 0.2s forwards;
-}
-.hero-eyebrow .dot {
-  display: inline-block;
-  width: 6px; height: 6px;
-  background: var(--green);
-  border-radius: 50%;
-  margin-right: 10px;
-  animation: pulse 2s ease-in-out infinite;
-  vertical-align: middle;
-}
-@keyframes pulse {
-  0%, 100% { opacity: 1; box-shadow: 0 0 0 0 rgba(143, 207, 138, 0.4); }
-  50% { opacity: 0.8; box-shadow: 0 0 0 8px rgba(143, 207, 138, 0); }
-}
-
-.hero h1 {
-  font-family: var(--font-display);
-  font-size: clamp(3rem, 7.5vw, 5.5rem);
-  font-weight: 800;
-  line-height: 1.0;
-  letter-spacing: -0.04em;
-  margin-bottom: 1.5rem;
-  opacity: 0;
-  animation: fadeUp 0.8s var(--ease-out-expo) 0.4s forwards;
-}
-.hero h1 .line { display: block; }
-.hero h1 .gradient {
-  background: linear-gradient(135deg, var(--green) 0%, var(--cyan) 50%, var(--accent-bright) 100%);
-  background-size: 200% auto;
-  -webkit-background-clip: text;
-  -webkit-text-fill-color: transparent;
-  background-clip: text;
-  animation: shimmer 4s linear infinite;
-}
-@keyframes shimmer {
-  0% { background-position: 0% center; }
-  100% { background-position: 200% center; }
-}
-
-.hero-sub {
-  font-size: 1.2rem;
-  line-height: 1.7;
-  color: var(--text-secondary);
-  max-width: 700px;
-  margin-bottom: 2.5rem;
-  opacity: 0;
-  animation: fadeUp 0.8s var(--ease-out-expo) 0.6s forwards;
-}
-
-.hero-actions {
-  display: flex;
-  gap: 1rem;
-  flex-wrap: wrap;
-  opacity: 0;
-  animation: fadeUp 0.8s var(--ease-out-expo) 0.8s forwards;
-}
-
-.btn-primary {
-  display: inline-flex;
-  align-items: center;
-  gap: 0.5rem;
-  padding: 0.85rem 2rem;
-  background: var(--accent);
-  color: var(--text-primary);
-  font-family: var(--font-body);
-  font-weight: 500;
-  font-size: 0.95rem;
-  border: none;
-  border-radius: 8px;
-  cursor: pointer;
-  text-decoration: none;
-  transition: all 0.3s var(--ease-out-expo);
-}
-.btn-primary:hover {
-  background: var(--accent-bright);
-  transform: translateY(-2px);
-  box-shadow: 0 8px 30px var(--accent-glow);
-}
-
-.btn-outline {
-  display: inline-flex;
-  align-items: center;
-  gap: 0.5rem;
-  padding: 0.85rem 2rem;
-  background: transparent;
-  color: var(--text-primary);
-  font-family: var(--font-body);
-  font-weight: 500;
-  font-size: 0.95rem;
-  border: 1px solid var(--border-accent);
-  border-radius: 8px;
-  cursor: pointer;
-  text-decoration: none;
-  transition: all 0.3s var(--ease-out-expo);
-}
-.btn-outline:hover {
-  border-color: var(--green);
-  background: rgba(143, 207, 138, 0.1);
-  transform: translateY(-2px);
-}
-
-.hero-stats {
-  display: flex;
-  gap: 3rem;
-  margin-top: 4rem;
-  padding-top: 3rem;
-  border-top: 1px solid var(--border);
-  opacity: 0;
-  animation: fadeUp 0.8s var(--ease-out-expo) 1s forwards;
-}
-.hero-stat .number {
-  font-family: var(--font-display);
-  font-size: 2.4rem;
-  font-weight: 800;
-  color: var(--text-primary);
-  line-height: 1;
-}
-.hero-stat .number span { color: var(--green); }
-.hero-stat .label {
-  font-size: 0.82rem;
-  color: var(--text-muted);
-  margin-top: 0.4rem;
-  font-family: var(--font-mono);
-  letter-spacing: 0.03em;
-}
-
-@keyframes fadeUp {
-  from { opacity: 0; transform: translateY(30px); }
-  to { opacity: 1; transform: translateY(0); }
-}
-
-@media (max-width: 600px) {
-  .hero-stats { flex-wrap: wrap; gap: 2rem; }
-  .hero-stat .number { font-size: 1.8rem; }
-}
-
-/* ═══════════════════════════════════════════
-   SECTION UTILITY
-   ═══════════════════════════════════════════ */
-section {
-  position: relative;
-  z-index: 1;
-  padding: 6rem 2rem;
-  max-width: 1200px;
-  margin: 0 auto;
-}
-.section-label {
-  font-family: var(--font-mono);
-  font-size: 0.75rem;
-  letter-spacing: 0.18em;
-  text-transform: uppercase;
-  color: var(--green);
-  margin-bottom: 1rem;
-}
-.section-title {
-  font-family: var(--font-display);
-  font-size: clamp(2rem, 4vw, 3rem);
-  font-weight: 700;
-  letter-spacing: -0.03em;
-  margin-bottom: 1rem;
-}
-.section-desc {
-  font-size: 1.05rem;
-  color: var(--text-secondary);
-  max-width: 600px;
-  line-height: 1.7;
-  margin-bottom: 3rem;
-}
-
-/* ═══════════════════════════════════════════
-   ABOUT / DUAL-PANEL
-   ═══════════════════════════════════════════ */
-.about-grid {
-  display: grid;
-  grid-template-columns: 1fr 1fr;
-  gap: 4rem;
-  align-items: start;
-}
-@media (max-width: 900px) {
-  .about-grid { grid-template-columns: 1fr; gap: 2rem; }
-}
-.about-text p {
-  color: var(--text-secondary);
-  line-height: 1.8;
-  margin-bottom: 1.2rem;
-  font-size: 1rem;
-}
-.about-text strong { color: var(--text-primary); font-weight: 500; }
-
-.tag-cloud { display: flex; flex-wrap: wrap; gap: 0.5rem; margin-top: 2rem; }
-.tag {
-  font-family: var(--font-mono);
-  font-size: 0.72rem;
-  letter-spacing: 0.04em;
-  padding: 0.4rem 0.9rem;
-  border: 1px solid var(--border);
-  border-radius: 100px;
-  color: var(--text-secondary);
-  background: var(--bg-card);
-  transition: all 0.3s;
-  white-space: nowrap;
-}
-.tag:hover { border-color: var(--green); color: var(--green); background: rgba(143, 207, 138, 0.1); }
-.tag.highlight { border-color: var(--accent); color: var(--green); background: var(--accent-glow); }
-
-.terminal {
-  background: var(--bg-card);
-  border: 1px solid var(--border);
-  border-radius: 12px;
-  overflow: hidden;
-  box-shadow: 0 20px 60px rgba(0,0,0,0.3);
-}
-.terminal-header {
-  display: flex;
-  align-items: center;
-  gap: 6px;
-  padding: 0.8rem 1rem;
-  background: rgba(0,0,0,0.3);
-  border-bottom: 1px solid var(--border);
-}
-.terminal-dot {
-  width: 10px; height: 10px; border-radius: 50%;
-}
-.terminal-dot.r { background: #ff5f57; }
-.terminal-dot.y { background: #febc2e; }
-.terminal-dot.g { background: #28c840; }
-.terminal-header span {
-  margin-left: 0.8rem;
-  font-family: var(--font-mono);
-  font-size: 0.7rem;
-  color: var(--text-muted);
-}
-.terminal-body {
-  padding: 1.2rem;
-  font-family: var(--font-mono);
-  font-size: 0.78rem;
-  line-height: 1.9;
-  color: var(--text-secondary);
-}
-.terminal-body .prompt { color: var(--green); }
-.terminal-body .flag { color: var(--orange); }
-.terminal-body .str { color: var(--cyan); }
-.terminal-body .comment { color: var(--text-muted); font-style: italic; }
-.terminal-body .output { color: var(--accent-bright); }
-
-/* ═══════════════════════════════════════════
-   DATA PROJECTS — HORIZONTAL SCROLL CARDS
-   ═══════════════════════════════════════════ */
-.toolkit-scroll-wrapper {
-  margin: 0 -2rem;
-  padding: 0 2rem;
-  overflow-x: auto;
-  overflow-y: visible;
-  scrollbar-width: none;
-  -ms-overflow-style: none;
-}
-.toolkit-scroll-wrapper::-webkit-scrollbar { display: none; }
-.toolkit-row {
-  display: flex;
-  gap: 1.2rem;
-  padding-bottom: 1rem;
-  width: max-content;
-}
-.tool-card {
-  width: 280px;
-  flex-shrink: 0;
-  background: var(--bg-card);
-  border: 1px solid var(--border);
-  border-radius: 14px;
-  padding: 1.8rem 1.5rem;
-  transition: all 0.4s var(--ease-out-expo);
-  position: relative;
-  overflow: hidden;
-}
-.tool-card::before {
-  content: '';
-  position: absolute;
-  top: 0; left: 0; right: 0;
-  height: 2px;
-  background: linear-gradient(90deg, transparent, var(--green), transparent);
-  opacity: 0;
-  transition: opacity 0.4s;
-}
-.tool-card:hover {
-  border-color: var(--border-accent);
-  background: var(--bg-card-hover);
-  transform: translateY(-4px);
-  box-shadow: 0 12px 40px rgba(0,0,0,0.3);
-}
-.tool-card:hover::before { opacity: 1; }
-.tool-icon {
-  font-size: 1.8rem;
-  margin-bottom: 1rem;
-  display: block;
-}
-.tool-card h4 {
-  font-family: var(--font-display);
-  font-weight: 600;
-  font-size: 1.05rem;
-  margin-bottom: 0.5rem;
-}
-.tool-card p {
-  font-size: 0.85rem;
-  color: var(--text-secondary);
-  line-height: 1.6;
-}
-.tool-badge {
-  display: inline-block;
-  font-family: var(--font-mono);
-  font-size: 0.65rem;
-  letter-spacing: 0.05em;
-  text-transform: uppercase;
-  padding: 0.2rem 0.6rem;
-  border-radius: 4px;
-  margin-top: 0.8rem;
-}
-.tool-badge.llm { background: rgba(95, 163, 160, 0.15); color: var(--accent-bright); }
-.tool-badge.auto { background: rgba(59, 111, 165, 0.1); color: var(--cyan); }
-.tool-badge.dev { background: rgba(143, 207, 138, 0.1); color: var(--green); }
-
-/* ═══════════════════════════════════════════
-   PROJECTS — FEATURED CARDS
-   ═══════════════════════════════════════════ */
-.projects-grid {
-  display: grid;
-  grid-template-columns: 1fr;
-  gap: 2rem;
-}
-.project-card {
-  background: var(--bg-card);
-  border: 1px solid var(--border);
-  border-radius: 16px;
-  padding: 2.5rem;
-  display: grid;
-  grid-template-columns: 1fr 1fr;
-  gap: 3rem;
-  align-items: center;
-  transition: all 0.4s var(--ease-out-expo);
-  position: relative;
-  overflow: hidden;
-}
-.project-card::after {
-  content: '';
-  position: absolute;
-  inset: 0;
-  border-radius: 16px;
-  padding: 1px;
-  background: linear-gradient(135deg, var(--accent) 0%, transparent 50%, var(--cyan) 100%);
-  -webkit-mask: linear-gradient(#fff 0 0) content-box, linear-gradient(#fff 0 0);
-  -webkit-mask-composite: xor;
-  mask-composite: exclude;
-  opacity: 0;
-  transition: opacity 0.4s;
-  pointer-events: none;
-}
-.project-card:hover {
-  transform: translateY(-4px);
-  box-shadow: 0 20px 60px rgba(0,0,0,0.25);
-}
-.project-card:hover::after { opacity: 1; }
-
-@media (max-width: 900px) {
-  .project-card { grid-template-columns: 1fr; gap: 1.5rem; }
-}
-
-.project-info .project-tag {
-  font-family: var(--font-mono);
-  font-size: 0.7rem;
-  letter-spacing: 0.1em;
-  text-transform: uppercase;
-  color: var(--cyan);
-  margin-bottom: 0.8rem;
-}
-.project-info h3 {
-  font-family: var(--font-display);
-  font-size: 1.6rem;
-  font-weight: 700;
-  letter-spacing: -0.02em;
-  margin-bottom: 0.8rem;
-}
-.project-info p {
-  color: var(--text-secondary);
-  line-height: 1.7;
-  font-size: 0.95rem;
-  margin-bottom: 1.2rem;
-}
-.project-tech {
-  display: flex;
-  flex-wrap: wrap;
-  gap: 0.4rem;
-}
-.project-tech span {
-  font-family: var(--font-mono);
-  font-size: 0.68rem;
-  padding: 0.25rem 0.7rem;
-  background: rgba(255,255,255,0.04);
-  border: 1px solid var(--border);
-  border-radius: 4px;
-  color: var(--text-muted);
-}
-
-.project-github {
-  display: inline-flex;
-  align-items: center;
-  gap: 0.5rem;
-  margin-top: 1.2rem;
-  padding: 0.5rem 1rem;
-  font-family: var(--font-mono);
-  font-size: 0.75rem;
-  letter-spacing: 0.03em;
-  color: var(--text-secondary);
-  text-decoration: none;
-  border: 1px solid var(--border);
-  border-radius: 8px;
-  background: rgba(255,255,255,0.02);
-  transition: all 0.3s var(--ease-out-expo);
-}
-.project-github svg {
-  width: 16px;
-  height: 16px;
-  fill: currentColor;
-  flex-shrink: 0;
-}
-.project-github:hover {
-  color: var(--text-primary);
-  border-color: var(--green);
-  background: rgba(143, 207, 138, 0.1);
-  transform: translateX(4px);
-}
-.project-github .arrow {
-  transition: transform 0.3s var(--ease-out-expo);
-}
-.project-github:hover .arrow {
-  transform: translateX(3px);
-}
-
-.project-visual {
-  background: rgba(0,0,0,0.3);
-  border: 1px solid var(--border);
-  border-radius: 10px;
-  padding: 1.5rem;
-  font-family: var(--font-mono);
-  font-size: 0.75rem;
-  line-height: 1.9;
-  color: var(--text-secondary);
-  overflow-x: auto;
-}
-.project-visual .kw { color: var(--accent-bright); }
-.project-visual .fn { color: var(--cyan); }
-.project-visual .str { color: var(--green); }
-.project-visual .comment { color: var(--text-muted); }
-.project-visual .num { color: var(--orange); }
-
-/* ═══════════════════════════════════════════
-   EXPERIENCE — TIMELINE
-   ═══════════════════════════════════════════ */
-.timeline { position: relative; padding-left: 2.5rem; }
-.timeline::before {
-  content: '';
-  position: absolute;
-  left: 0;
-  top: 0;
-  bottom: 0;
-  width: 1px;
-  background: linear-gradient(to bottom, var(--accent), var(--border) 20%, var(--border) 80%, transparent);
-}
-.timeline-item {
-  position: relative;
-  padding-bottom: 3rem;
-}
-.timeline-item:last-child { padding-bottom: 0; }
-.timeline-item::before {
-  content: '';
-  position: absolute;
-  left: -2.5rem;
-  top: 6px;
-  width: 9px;
-  height: 9px;
-  border-radius: 50%;
-  background: var(--bg-primary);
-  border: 2px solid var(--border-accent);
-  transition: all 0.3s;
-}
-.timeline-item:first-child::before {
-  border-color: var(--green);
-  box-shadow: 0 0 0 4px rgba(143, 207, 138, 0.3);
-}
-.timeline-item:hover::before {
-  border-color: var(--green);
-  background: var(--accent);
-}
-
-.tl-header { display: flex; align-items: baseline; gap: 1rem; flex-wrap: wrap; margin-bottom: 0.3rem; }
-.tl-company {
-  font-family: var(--font-display);
-  font-weight: 700;
-  font-size: 1.15rem;
-}
-.tl-role {
-  font-size: 0.95rem;
-  color: var(--text-secondary);
-}
-.tl-meta {
-  font-family: var(--font-mono);
-  font-size: 0.72rem;
-  color: var(--text-muted);
-  margin-bottom: 0.8rem;
-  letter-spacing: 0.03em;
-}
-.tl-bullets { list-style: none; padding: 0; }
-.tl-bullets li {
-  position: relative;
-  padding-left: 1.2rem;
-  margin-bottom: 0.5rem;
-  font-size: 0.9rem;
-  color: var(--text-secondary);
-  line-height: 1.65;
-}
-.tl-bullets li::before {
-  content: '›';
-  position: absolute;
-  left: 0;
-  color: var(--green);
-  font-weight: 700;
-}
-.tl-highlight {
-  margin-top: 0.8rem;
-  padding: 1rem 1.2rem;
-  background: var(--accent-glow);
-  border-left: 2px solid var(--accent);
-  border-radius: 0 8px 8px 0;
-}
-.tl-highlight p {
-  font-size: 0.85rem;
-  color: var(--text-secondary);
-  line-height: 1.6;
-}
-.tl-highlight strong { color: var(--accent-bright); }
-
-/* ═══════════════════════════════════════════
-   GITHUB PROJECTS SECTION
-   ═══════════════════════════════════════════ */
-.github-projects-section {
-  text-align: center;
-}
-.github-projects-grid {
-  display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-  gap: 1.5rem;
-  margin-top: 2rem;
-}
-.github-project-card {
-  background: var(--bg-card);
-  border: 1px solid var(--border);
-  border-radius: 12px;
-  padding: 2rem;
-  text-decoration: none;
-  color: var(--text-primary);
-  transition: all 0.3s var(--ease-out-expo);
-  text-align: left;
-  display: flex;
-  flex-direction: column;
-  height: 100%;
-}
-.github-project-card:hover {
-  border-color: var(--green);
-  background: var(--bg-card-hover);
-  transform: translateY(-3px);
-  box-shadow: 0 10px 30px rgba(0,0,0,0.2);
-}
-.github-project-card h4 {
-  font-family: var(--font-display);
-  font-size: 1.1rem;
-  margin-bottom: 0.8rem;
-  display: flex;
-  align-items: center;
-  gap: 0.5rem;
-}
-.github-project-card h4 svg {
-  width: 18px;
-  height: 18px;
-  fill: currentColor;
-}
-.github-project-card p {
-  font-size: 0.85rem;
-  color: var(--text-secondary);
-  line-height: 1.6;
-  margin-bottom: 1rem;
-  flex-grow: 1;
-}
-.project-type-badge {
-  display: inline-block;
-  font-family: var(--font-mono);
-  font-size: 0.65rem;
-  letter-spacing: 0.05em;
-  text-transform: uppercase;
-  padding: 0.2rem 0.6rem;
-  border-radius: 4px;
-  margin-top: auto;
-}
-.project-type-badge.data-project {
-  background: rgba(59, 111, 165, 0.1);
-  color: var(--cyan);
-}
-.project-type-badge.ai-project {
-  background: rgba(95, 163, 160, 0.15);
-  color: var(--accent-bright);
-}
-
-/* ═══════════════════════════════════════════
-   CONTACT
-   ═══════════════════════════════════════════ */
-.contact-section {
-  text-align: center;
-}
-.contact-section .section-title {
-  margin-bottom: 1rem;
-}
-.contact-section .section-desc {
-  margin: 0 auto 3rem;
-  text-align: center;
-}
-.contact-grid {
-  display: flex;
-  justify-content: center;
-  gap: 1.5rem;
-  flex-wrap: wrap;
-}
-.contact-card {
-  background: var(--bg-card);
-  border: 1px solid var(--border);
-  border-radius: 12px;
-  padding: 1.5rem 2rem;
-  text-decoration: none;
-  color: var(--text-primary);
-  transition: all 0.3s var(--ease-out-expo);
-  display: flex;
-  align-items: center;
-  gap: 1rem;
-  min-width: 260px;
-}
-.contact-card:hover {
-  border-color: var(--green);
-  background: var(--bg-card-hover);
-  transform: translateY(-3px);
-  box-shadow: 0 10px 30px rgba(0,0,0,0.2);
-}
-.contact-icon {
-  width: 44px; height: 44px;
-  display: flex; align-items: center; justify-content: center;
-  border-radius: 10px;
-  background: var(--accent-glow);
-  font-size: 1.3rem;
-  flex-shrink: 0;
-}
-.contact-icon svg {
-  width: 22px;
-  height: 22px;
-  fill: var(--text-primary);
-}
-.contact-card .contact-label {
-  font-family: var(--font-mono);
-  font-size: 0.65rem;
-  text-transform: uppercase;
-  letter-spacing: 0.1em;
-  color: var(--text-muted);
-}
-.contact-card .contact-value {
-  font-size: 0.9rem;
-  margin-top: 0.15rem;
-}
-
-/* ═══════════════════════════════════════════
-   FOOTER
-   ═══════════════════════════════════════════ */
-footer {
-  position: relative;
-  z-index: 1;
-  text-align: center;
-  padding: 2rem;
-  border-top: 1px solid var(--border);
-  font-family: var(--font-mono);
-  font-size: 0.7rem;
-  color: var(--text-muted);
-  letter-spacing: 0.05em;
-}
-
-/* ═══════════════════════════════════════════
-   SCROLL REVEAL
-   ═══════════════════════════════════════════ */
-.reveal {
-  opacity: 0;
-  transform: translateY(40px);
-  transition: all 0.8s var(--ease-out-expo);
-}
-.reveal.visible {
-  opacity: 1;
-  transform: translateY(0);
-}
-.reveal-delay-1 { transition-delay: 0.1s; }
-.reveal-delay-2 { transition-delay: 0.2s; }
-.reveal-delay-3 { transition-delay: 0.3s; }
-
-/* ═══════════════════════════════════════════
-   DIVIDER
-   ═══════════════════════════════════════════ */
-.section-divider {
-  height: 1px;
-  max-width: 1200px;
-  margin: 0 auto;
-  background: linear-gradient(90deg, transparent, var(--border) 20%, var(--border) 80%, transparent);
-}
-</style>
-</head>
-<body>
-
-<!-- Ambient background glow -->
-<div class="ambient-glow">
-  <div class="orb"></div>
-  <div class="orb"></div>
-  <div class="orb"></div>
-</div>
-
-<!-- ═══════════════ NAV ═══════════════ -->
-<nav id="nav">
-  <a href="#" class="nav-logo">SK<span>.</span></a>
-  <div class="nav-links" id="navLinks">
-    <a href="#about">About</a>
-    <a href="#data-projects">Data Projects</a>
-    <a href="#ai-projects">AI Projects</a>
-    <a href="#experience">Experience</a>
-    <a href="#github-projects">GitHub Projects</a>
-    <a href="https://github.com/sankshine" target="_blank" class="nav-github"><svg viewBox="0 0 16 16"><path d="M8 0C3.58 0 0 3.58 0 8c0 3.54 2.29 6.53 5.47 7.59.4.07.55-.17.55-.38 0-.19-.01-.82-.01-1.49-2.01.37-2.53-.49-2.69-.94-.09-.23-.48-.94-.82-1.13-.28-.15-.68-.52-.01-.53.63-.01 1.08.58 1.23.82.72 1.21 1.87.87 2.33.66.07-.52.28-.87.51-1.07-1.78-.2-3.64-.89-3.64-3.95 0-.87.31-1.59.82-2.15-.08-.2-.36-1.02.08-2.12 0 0 .67-.21 2.2.82.64-.18 1.32-.27 2-.27.68 0 1.36.09 2 .27 1.53-1.04 2.2-.82 2.2-.82.44 1.1.16 1.92.08 2.12.51.56.82 1.27.82 2.15 0 3.07-1.87 3.75-3.65 3.95.29.25.54.73.54 1.48 0 1.07-.01 1.93-.01 2.2 0 .21.15.46.55.38A8.013 8.013 0 0016 8c0-4.42-3.58-8-8-8z"/></svg> GitHub</a>
-    <a href="#contact" class="nav-cta">Contact</a>
-  </div>
-  <button class="nav-toggle" id="navToggle" aria-label="Toggle navigation">
-    <span></span><span></span><span></span>
-  </button>
-</nav>
-
-<!-- ═══════════════ HERO ═══════════════ -->
-<header class="hero">
-  <div class="hero-eyebrow"><span class="dot"></span> Sr. Technical Product Manager Candidate @ Mckesson</div>
-  <h1>
-    <span class="line">Sana Khan</span>
-    <span class="line"><span class="gradient">Data AI/ML</span></span>
-    <span class="line">Product Leader</span>
-  </h1>
-  <p class="hero-sub">
-    Strategic AI Product Manager with 7+ years leading Data and AI/ML product development across Telecom, FinTech, Pharma, and Healthcare. Proven track record delivering $2M+ in annual savings and 70% workflow automation through scalable AI solutions. PSPO II certified with expertise in regulated environments.
-  </p>
-  <div class="hero-actions">
-    <a href="#ai-projects" class="btn-primary">View AI Projects ↓</a>
-    <a href="#contact" class="btn-outline">Contact Me</a>
-  </div>
-  <div class="hero-stats">
-    <div class="hero-stat">
-      <div class="number">7<span>+</span></div>
-      <div class="label">Years in Tech</div>
-    </div>
-    <div class="hero-stat">
-      <div class="number">$2M<span>+</span></div>
-      <div class="label">Annual Cost Savings</div>
-    </div>
-    <div class="hero-stat">
-      <div class="number">70<span>%</span></div>
-      <div class="label">Workflow Automation</div>
-    </div>
-    <div class="hero-stat">
-      <div class="number">PSPO II</div>
-      <div class="label">Certified Product Owner</div>
-    </div>
-  </div>
-</header>
-
-<div class="section-divider"></div>
-
-<!-- ═══════════════ ABOUT ═══════════════ -->
-<section id="about">
-  <div class="reveal">
-    <span class="section-label">// About</span>
-    <h2 class="section-title">Data and AI Product Leader</h2>
-  </div>
-  <div class="about-grid">
-    <div class="about-text reveal reveal-delay-1">
-      <p>
-        <strong>Strategic AI Product Manager</strong> with expertise in regulated environments including Healthcare (HIPAA), Pharma (cGMP), Telecom and FinTech. Combines deep technical expertise in Generative AI, MLOps, and data engineering with strong product leadership from vision and roadmapping through stakeholder alignment, Agile execution, and post-launch governance.
-      </p>
-      <p>
-        Passionate about driving AI adoption that is <strong>ethical, impactful, and aligned with business goals</strong>. Proven ability to translate complex healthcare challenges into scalable AI solutions that deliver measurable outcomes. Comfortable wearing multiple hats, moving fast, and building from zero-to-one in dynamic environments.
-      </p>
-      <p>
-        <strong>Core focus areas:</strong> Cost optimization, supply chain analytics, risk & compliance (HIPAA, GDPR, cGMP), financial modeling, and AI governance. Experience with enterprise data products serving 1200+ users and implementing resource allocation frameworks.
-      </p>
-      <div class="tag-cloud">
-        <span class="tag highlight">Generative AI</span>
-        <span class="tag highlight">LLMs & RAG</span>
-        <span class="tag highlight">Agentic AI</span>
-        <span class="tag">MLOps</span>
-        <span class="tag">Data Engineering</span>
-        <span class="tag">Python & SQL</span>
-        <span class="tag">GCP & AWS</span>
-        <span class="tag">Apache Airflow</span>
-        <span class="tag">Kafka</span>
-        <span class="tag">Financial Modeling</span>
-        <span class="tag">ROI Analysis</span>
-        <span class="tag">HIPAA/GDPR</span>
-        <span class="tag">cGMP Compliance</span>
-        <span class="tag">Agile/Scrum</span>
-        <span class="tag">PSPO II</span>
-      </div>
-    </div>
-    <div class="terminal reveal reveal-delay-2">
-      <div class="terminal-header">
-        <div class="terminal-dot r"></div>
-        <div class="terminal-dot y"></div>
-        <div class="terminal-dot g"></div>
-        <span>sana@mckesson ~ /ai-product-management</span>
-      </div>
-      <div class="terminal-body">
-        <span class="comment"># Healthcare AI Product Strategy</span><br><br>
-        <span class="prompt">$</span> analyze_healthcare_data <span class="flag">--compliance</span> HIPAA<br>
-        <span class="output">→ Data governance implemented, PII secured</span><br><br>
-        <span class="prompt">$</span> build_rag_pipeline <span class="flag">--domain</span> <span class="str">"clinical_docs"</span> \<br>
-        &nbsp;&nbsp;<span class="flag">--vector-db</span> Milvus <span class="flag">--llm</span> PaLM2<br>
-        <span class="output">→ 70% document processing automated</span><br><br>
-        <span class="prompt">$</span> optimize_costs <span class="flag">--team</span> FinOps <span class="flag">--cloud</span> GCP<br>
-        <span class="output">→ $2M annual compute savings achieved</span><br><br>
-        <span class="prompt">$</span> deploy_agentic_workflow <span class="flag">--tool</span> LangGraph<br>
-        <span class="output">→ Multi-agent system live, 60% manual oversight reduced</span><br><br>
-        <span class="comment"># Results: Faster decisions, lower costs, compliance assured</span>
-      </div>
-    </div>
-  </div>
-</section>
-
-<div class="section-divider"></div>
-
 <!-- ═══════════════ DATA PROJECTS ═══════════════ -->
 <section id="data-projects">
   <div class="reveal">
@@ -1091,41 +7,33 @@ footer {
   </div>
   <div class="toolkit-scroll-wrapper reveal reveal-delay-1">
     <div class="toolkit-row">
-      <div class="tool-card">
-        <span class="tool-icon">🔐</span>
-        <h4>PII/PHI Data Governance</h4>
-        <p>Vertex AI pipeline using fine-tuned LLMs to automatically profile, classify, and tag sensitive fields across streaming/batch datasets.</p>
-        <span class="tool-badge dev">Data Governance</span>
-      </div>
-      <div class="tool-card">
-        <span class="tool-icon">⚡</span>
-        <h4>Real-time Kafka Pipelines</h4>
-        <p>Engineered streaming pipelines in Python integrated with ELK stack, optimizing SQL queries across multiple databases.</p>
-        <span class="tool-badge auto">Real-time</span>
-      </div>
-      <div class="tool-card">
-        <span class="tool-icon">☁️</span>
-        <h4>GCP Cloud Migration</h4>
-        <p>Migrated from on-prem Hadoop to GCP BigQuery with IAM security, HIPAA compliance, and metadata cataloging in Colibra.</p>
-        <span class="tool-badge dev">Cloud</span>
-      </div>
-      <div class="tool-card">
-        <span class="tool-icon">📊</span>
-        <h4>Apache Airflow Orchestration</h4>
-        <p>Built 100+ DAGs on GCP to automate data workflows with integrated monitoring dashboards and Slack API alerts.</p>
-        <span class="tool-badge auto">Orchestration</span>
-      </div>
-      <div class="tool-card">
-        <span class="tool-icon">🏥</span>
-        <h4>HIPAA Compliance Framework</h4>
-        <p>Implemented comprehensive data security, Privacy Impact Assessments (PIA), and audit trails for healthcare data.</p>
-        <span class="tool-badge llm">Compliance</span>
-      </div>
+      <!-- Project 1: GTM Strategy for FinOps -->
       <div class="tool-card">
         <span class="tool-icon">📈</span>
-        <h4>Operational Dashboards</h4>
-        <p>MicroStrategy dashboards to monitor high-risk triggers with n8n workflows for automated alerting and incident response.</p>
-        <span class="tool-badge auto">Monitoring</span>
+        <h4>GTM Strategy for 5 FinOps Data Products</h4>
+        <p>Complete go-to-market strategy for 5 enterprise FinOps data products serving 1200+ users, including pricing models and adoption metrics.</p>
+        <span class="tool-badge auto">GTM Strategy</span>
+      </div>
+      <!-- Project 2: On-prem to GCP Migration -->
+      <div class="tool-card">
+        <span class="tool-icon">☁️</span>
+        <h4>On-prem to GCP Migration</h4>
+        <p>Migrated data from on-prem Hadoop/Oracle DB to GCP BigQuery with IAM security, HIPAA compliance, Privacy Impact Assessments, and Collibra metadata cataloging.</p>
+        <span class="tool-badge dev">Cloud Migration</span>
+      </div>
+      <!-- Project 3: Airflow DAGs -->
+      <div class="tool-card">
+        <span class="tool-icon">⚙️</span>
+        <h4>Airflow DAGs Orchestration</h4>
+        <p>Built 100+ Apache Airflow DAGs on GCP for data pipeline orchestration with integrated monitoring dashboards and automated alerting systems.</p>
+        <span class="tool-badge auto">Orchestration</span>
+      </div>
+      <!-- Project 4: Kafka Streaming -->
+      <div class="tool-card">
+        <span class="tool-icon">⚡</span>
+        <h4>Kafka Streaming Pipelines</h4>
+        <p>Engineered real-time Kafka streaming pipelines in Python integrated with ELK stack for high-throughput event processing and data optimization.</p>
+        <span class="tool-badge auto">Real-time</span>
       </div>
     </div>
   </div>
@@ -1142,13 +50,47 @@ footer {
   </div>
 
   <div class="projects-grid">
-    <!-- Project 1: GenAI Co-pilot -->
+    <!-- Project 1: Real Estate Agentic AI -->
+    <div class="project-card reveal">
+      <div class="project-info">
+        <div class="project-tag">Agentic AI</div>
+        <h3>Real Estate Agentic AI Solution</h3>
+        <p>
+          Multi-agent AI system for real estate document processing using LangGraph orchestration and Milvus vector database. Automated 70% of document processing with intelligent workflow automation.
+        </p>
+        <div class="project-tech">
+          <span>LangGraph</span>
+          <span>Milvus</span>
+          <span>Multi-Agent Systems</span>
+          <span>Document Processing</span>
+          <span>n8n Automation</span>
+        </div>
+        <a href="https://github.com/sankshine" target="_blank" class="project-github">
+          <svg viewBox="0 0 16 16"><path d="M8 0C3.58 0 0 3.58 0 8c0 3.54 2.29 6.53 5.47 7.59.4.07.55-.17.55-.38 0-.19-.01-.82-.01-1.49-2.01.37-2.53-.49-2.69-.94-.09-.23-.48-.94-.82-1.13-.28-.15-.68-.52-.01-.53.63-.01 1.08.58 1.23.82.72 1.21 1.87.87 2.33.66.07-.52.28-.87.51-1.07-1.78-.2-3.64-.89-3.64-3.95 0-.87.31-1.59.82-2.15-.08-.2-.36-1.02.08-2.12 0 0 .67-.21 2.2.82.64-.18 1.32-.27 2-.27.68 0 1.36.09 2 .27 1.53-1.04 2.2-.82 2.2-.82.44 1.1.16 1.92.08 2.12.51.56.82 1.27.82 2.15 0 3.07-1.87 3.75-3.65 3.95.29.25.54.73.54 1.48 0 1.07-.01 1.93-.01 2.2 0 .21.15.46.55.38A8.013 8.013 0 0016 8c0-4.42-3.58-8-8-8z"/></svg>
+          View on GitHub
+          <span class="arrow">→</span>
+        </a>
+      </div>
+      <div class="project-visual">
+        <span class="comment">// Real Estate Agentic AI — Architecture</span><br><br>
+        <span class="kw">document_input</span>: <span class="num">1000</span> real-estate files<br>
+        <span class="kw">agent_1</span>: Document parser & classifier<br>
+        <span class="kw">agent_2</span>: Data extractor (vector search)<br>
+        <span class="kw">agent_3</span>: Compliance validator<br>
+        <span class="kw">agent_4</span>: Report generator<br><br>
+        <span class="fn">→</span> Processing time: <span class="num">70</span>% faster<br>
+        <span class="fn">→</span> Manual effort: <span class="num">60</span>% reduction<br>
+        <span class="fn">→</span> Accuracy: <span class="num">95</span>% validated output
+      </div>
+    </div>
+
+    <!-- Project 2: Gen-AI Copilot for Tickets -->
     <div class="project-card reveal">
       <div class="project-info">
         <div class="project-tag">Generative AI</div>
-        <h3>GenAI Support Co-pilot</h3>
+        <h3>Gen-AI Copilot for Ticket Resolution</h3>
         <p>
-          Developed a GenAI co-pilot leveraging RAG with multi-step validation for precise information retrieval. Reduced average internal support ticket resolution time by 50% while minimizing inaccuracies through validation layers.
+          Generative AI co-pilot leveraging RAG with multi-step validation for precise IT support ticket resolution. Reduced average resolution time by 50% with minimized inaccuracies.
         </p>
         <div class="project-tech">
           <span>RAG Architecture</span>
@@ -1157,6 +99,11 @@ footer {
           <span>Validation Layers</span>
           <span>ServiceNow Integration</span>
         </div>
+        <a href="https://github.com/sankshine" target="_blank" class="project-github">
+          <svg viewBox="0 0 16 16"><path d="M8 0C3.58 0 0 3.58 0 8c0 3.54 2.29 6.53 5.47 7.59.4.07.55-.17.55-.38 0-.19-.01-.82-.01-1.49-2.01.37-2.53-.49-2.69-.94-.09-.23-.48-.94-.82-1.13-.28-.15-.68-.52-.01-.53.63-.01 1.08.58 1.23.82.72 1.21 1.87.87 2.33.66.07-.52.28-.87.51-1.07-1.78-.2-3.64-.89-3.64-3.95 0-.87.31-1.59.82-2.15-.08-.2-.36-1.02.08-2.12 0 0 .67-.21 2.2.82.64-.18 1.32-.27 2-.27.68 0 1.36.09 2 .27 1.53-1.04 2.2-.82 2.2-.82.44 1.1.16 1.92.08 2.12.51.56.82 1.27.82 2.15 0 3.07-1.87 3.75-3.65 3.95.29.25.54.73.54 1.48 0 1.07-.01 1.93-.01 2.2 0 .21.15.46.55.38A8.013 8.013 0 0016 8c0-4.42-3.58-8-8-8z"/></svg>
+          View on GitHub
+          <span class="arrow">→</span>
+        </a>
       </div>
       <div class="project-visual">
         <span class="comment">// GenAI Co-pilot — Architecture</span><br><br>
@@ -1170,321 +117,105 @@ footer {
       </div>
     </div>
 
-    <!-- Project 2: Agentic AI Workflows -->
+    <!-- Project 3: $500 Data Usage Alert -->
     <div class="project-card reveal">
       <div class="project-info">
-        <div class="project-tag">Agentic AI</div>
-        <h3>Multi-Agent Document Processing</h3>
+        <div class="project-tag">Automation</div>
+        <h3>$500 Data Usage Alert Automation</h3>
         <p>
-          Led development of Agentic AI solutions leveraging Milvus for vector-based document retrieval and LangGraph for orchestrating multi-agent workflows. Automated 70% of real-estate document processing with 150+ user stories managed.
+          n8n workflow automation for monitoring data usage costs with automated alerts at $500 thresholds, escalation procedures, and integration with financial systems.
         </p>
         <div class="project-tech">
-          <span>LangGraph</span>
-          <span>Milvus</span>
-          <span>Multi-Agent Systems</span>
-          <span>Document Processing</span>
-          <span>n8n Automation</span>
+          <span>n8n</span>
+          <span>Workflow Automation</span>
+          <span>Cost Monitoring</span>
+          <span>Alert Systems</span>
+          <span>Slack/Email Integration</span>
         </div>
+        <a href="https://github.com/sankshine" target="_blank" class="project-github">
+          <svg viewBox="0 0 16 16"><path d="M8 0C3.58 0 0 3.58 0 8c0 3.54 2.29 6.53 5.47 7.59.4.07.55-.17.55-.38 0-.19-.01-.82-.01-1.49-2.01.37-2.53-.49-2.69-.94-.09-.23-.48-.94-.82-1.13-.28-.15-.68-.52-.01-.53.63-.01 1.08.58 1.23.82.72 1.21 1.87.87 2.33.66.07-.52.28-.87.51-1.07-1.78-.2-3.64-.89-3.64-3.95 0-.87.31-1.59.82-2.15-.08-.2-.36-1.02.08-2.12 0 0 .67-.21 2.2.82.64-.18 1.32-.27 2-.27.68 0 1.36.09 2 .27 1.53-1.04 2.2-.82 2.2-.82.44 1.1.16 1.92.08 2.12.51.56.82 1.27.82 2.15 0 3.07-1.87 3.75-3.65 3.95.29.25.54.73.54 1.48 0 1.07-.01 1.93-.01 2.2 0 .21.15.46.55.38A8.013 8.013 0 0016 8c0-4.42-3.58-8-8-8z"/></svg>
+          View on GitHub
+          <span class="arrow">→</span>
+        </a>
       </div>
       <div class="project-visual">
-        <span class="comment">// Multi-Agent System — Flow</span><br><br>
-        <span class="kw">document_input</span>: <span class="num">1000</span> real-estate files<br>
-        <span class="kw">agent_1</span>: Document parser & classifier<br>
-        <span class="kw">agent_2</span>: Data extractor (vector search)<br>
-        <span class="kw">agent_3</span>: Compliance validator<br>
-        <span class="kw">agent_4</span>: Report generator<br><br>
-        <span class="fn">→</span> Processing time: <span class="num">70</span>% faster<br>
-        <span class="fn">→</span> Manual effort: <span class="num">60</span>% reduction<br>
-        <span class="fn">→</span> Accuracy: <span class="num">95</span>% validated output
+        <span class="comment">// Data Usage Alert — Workflow</span><br><br>
+        <span class="kw">monitor</span>: Data usage costs<br>
+        <span class="kw">threshold</span>: $<span class="num">500</span> per team<br>
+        <span class="kw">alert_trigger</span>: Email + Slack notification<br>
+        <span class="kw">escalation</span>: Manager → Director → VP<br>
+        <span class="kw">action</span>: Auto-suspend overages<br><br>
+        <span class="fn">→</span> Cost overruns: <span class="num">80</span>% reduction<br>
+        <span class="fn">→</span> Manual monitoring: <span class="num">90</span>% eliminated<br>
+        <span class="comment">  Annual savings: $200K+</span>
       </div>
     </div>
 
-    <!-- Project 3: Cost Optimization -->
+    <!-- Project 4: Alex AI Chatbot -->
     <div class="project-card reveal">
       <div class="project-info">
-        <div class="project-tag">Financial Analytics</div>
-        <h3>Cloud Cost Optimization</h3>
+        <div class="project-tag">Conversational AI</div>
+        <h3>Alex AI Chatbot</h3>
         <p>
-          Defined GTM strategy across 5 enterprise Data Products serving 1200+ users. Implemented resource allocation framework and cloud optimization, delivering $2M in annual compute cost savings for FinOps team.
+          Enterprise-grade AI chatbot with natural language processing capabilities for customer service, internal knowledge base queries, and automated support resolution.
         </p>
         <div class="project-tech">
-          <span>Financial Modeling</span>
-          <span>ROI Analysis</span>
-          <span>Cloud Optimization</span>
-          <span>Resource Allocation</span>
-          <span>GTM Strategy</span>
+          <span>NLP</span>
+          <span>Dialog Management</span>
+          <span>Intent Recognition</span>
+          <span>Sentiment Analysis</span>
+          <span>Multi-language Support</span>
         </div>
+        <a href="https://github.com/sankshine" target="_blank" class="project-github">
+          <svg viewBox="0 0 16 16"><path d="M8 0C3.58 0 0 3.58 0 8c0 3.54 2.29 6.53 5.47 7.59.4.07.55-.17.55-.38 0-.19-.01-.82-.01-1.49-2.01.37-2.53-.49-2.69-.94-.09-.23-.48-.94-.82-1.13-.28-.15-.68-.52-.01-.53.63-.01 1.08.58 1.23.82.72 1.21 1.87.87 2.33.66.07-.52.28-.87.51-1.07-1.78-.2-3.64-.89-3.64-3.95 0-.87.31-1.59.82-2.15-.08-.2-.36-1.02.08-2.12 0 0 .67-.21 2.2.82.64-.18 1.32-.27 2-.27.68 0 1.36.09 2 .27 1.53-1.04 2.2-.82 2.2-.82.44 1.1.16 1.92.08 2.12.51.56.82 1.27.82 2.15 0 3.07-1.87 3.75-3.65 3.95.29.25.54.73.54 1.48 0 1.07-.01 1.93-.01 2.2 0 .21.15.46.55.38A8.013 8.013 0 0016 8c0-4.42-3.58-8-8-8z"/></svg>
+          View on GitHub
+          <span class="arrow">→</span>
+        </a>
       </div>
       <div class="project-visual">
-        <span class="comment">// Cloud Cost Optimization — Results</span><br><br>
-        <span class="kw">data_products</span>: <span class="num">5</span> enterprise products<br>
-        <span class="kw">users_served</span>: <span class="num">1200</span>+ active users<br>
-        <span class="kw">cost_analysis</span>: <span class="num">30</span>% waste identified<br>
-        <span class="kw">optimization_plan</span>: Resource allocation framework<br>
-        <span class="kw">annual_savings</span>: $<span class="num">2,000,000</span><br><br>
-        <span class="fn">→</span> <span class="str">FinOps_Report_Q4.pdf</span><br>
-        <span class="comment">  Cloud spend efficiency: 40% improvement</span>
+        <span class="comment">// Alex AI Chatbot — Metrics</span><br><br>
+        <span class="kw">users_served</span>: <span class="num">1200</span>+ enterprise users<br>
+        <span class="kw">queries_handled</span>: <span class="num">50K</span>/month<br>
+        <span class="kw">accuracy_rate</span>: <span class="num">92</span>% intent recognition<br>
+        <span class="kw">resolution_rate</span>: <span class="num">85</span>% automated<br>
+        <span class="kw">languages</span>: <span class="num">5</span> supported<br><br>
+        <span class="fn">→</span> Support tickets: <span class="num">40</span>% reduction<br>
+        <span class="fn">→</span> Response time: <span class="num">2</span> minutes vs 2 hours
+      </div>
+    </div>
+
+    <!-- Project 5: PaLM2 Data Classifier -->
+    <div class="project-card reveal">
+      <div class="project-info">
+        <div class="project-tag">LLM Fine-tuning</div>
+        <h3>PaLM2 Based Data Classifier</h3>
+        <p>
+          Fine-tuned PaLM2 model for automated data classification, tagging, and categorization with healthcare-specific compliance layers for PII/PHI detection.
+        </p>
+        <div class="project-tech">
+          <span>PaLM2</span>
+          <span>Fine-tuning</span>
+          <span>Data Classification</span>
+          <span>PII/PHI Detection</span>
+          <span>Healthcare Compliance</span>
+        </div>
+        <a href="https://github.com/sankshine" target="_blank" class="project-github">
+          <svg viewBox="0 0 16 16"><path d="M8 0C3.58 0 0 3.58 0 8c0 3.54 2.29 6.53 5.47 7.59.4.07.55-.17.55-.38 0-.19-.01-.82-.01-1.49-2.01.37-2.53-.49-2.69-.94-.09-.23-.48-.94-.82-1.13-.28-.15-.68-.52-.01-.53.63-.01 1.08.58 1.23.82.72 1.21 1.87.87 2.33.66.07-.52.28-.87.51-1.07-1.78-.2-3.64-.89-3.64-3.95 0-.87.31-1.59.82-2.15-.08-.2-.36-1.02.08-2.12 0 0 .67-.21 2.2.82.64-.18 1.32-.27 2-.27.68 0 1.36.09 2 .27 1.53-1.04 2.2-.82 2.2-.82.44 1.1.16 1.92.08 2.12.51.56.82 1.27.82 2.15 0 3.07-1.87 3.75-3.65 3.95.29.25.54.73.54 1.48 0 1.07-.01 1.93-.01 2.2 0 .21.15.46.55.38A8.013 8.013 0 0016 8c0-4.42-3.58-8-8-8z"/></svg>
+          View on GitHub
+          <span class="arrow">→</span>
+        </a>
+      </div>
+      <div class="project-visual">
+        <span class="comment">// PaLM2 Classifier — Performance</span><br><br>
+        <span class="kw">model</span>: PaLM2 fine-tuned<br>
+        <span class="kw">training_data</span>: <span class="num">1M</span> labeled samples<br>
+        <span class="kw">accuracy</span>: <span class="num">96.5</span>% classification<br>
+        <span class="kw">pii_detection</span>: <span class="num">99.2</span>% recall<br>
+        <span class="kw">processing_speed</span>: <span class="num">1000</span> docs/sec<br><br>
+        <span class="fn">→</span> Manual review: <span class="num">80</span>% reduction<br>
+        <span class="fn">→</span> HIPAA compliance: <span class="num">100</span>% automated<br>
+        <span class="comment">  Cost: $0.01 per 1000 docs</span>
       </div>
     </div>
   </div>
 </section>
-
-<div class="section-divider"></div>
-
-<!-- ═══════════════ EXPERIENCE ═══════════════ -->
-<section id="experience">
-  <div class="reveal">
-    <span class="section-label">// Experience</span>
-    <h2 class="section-title">Professional Journey</h2>
-    <p class="section-desc">Progressive leadership in AI/ML product management across regulated industries.</p>
-  </div>
-
-  <div class="timeline reveal reveal-delay-1">
-    <!-- Bell Canada - Product Owner -->
-    <div class="timeline-item">
-      <div class="tl-header">
-        <span class="tl-company">Bell Canada</span>
-        <span class="tl-role">— Product Owner - AI/Data Engineering</span>
-      </div>
-      <div class="tl-meta">Jan 2025 – Present · Telecom · Canada</div>
-      <ul class="tl-bullets">
-        <li>Reduced average internal support ticket resolution time by 50% by developing a GenAI co-pilot using RAG with multi-step validation</li>
-        <li>Led delivery of real-time operational dashboards in MicroStrategy to monitor high-risk triggers with n8n workflows for automated alerting</li>
-        <li>Defined GTM strategy across 5 enterprise Data Products serving 1200+ users, implementing resource allocation framework and cloud optimization</li>
-        <li>Established product vision, user stories, and roadmap aligned with financial, legal, and real-estate teams' needs</li>
-        <li>Managed backlog of 150+ user stories for Agentic AI solutions leveraging Milvus and LangGraph</li>
-      </ul>
-      <div class="tl-highlight">
-        <p><strong>Key achievement:</strong> Delivered $2M in annual compute cost savings for FinOps team through cloud optimization and resource allocation framework.</p>
-      </div>
-    </div>
-
-    <!-- Bell Canada - Scrum Master -->
-    <div class="timeline-item">
-      <div class="tl-header">
-        <span class="tl-company">Bell Canada</span>
-        <span class="tl-role">— Scrum Master - AI/Data Engineering</span>
-      </div>
-      <div class="tl-meta">July 2024 – Dec 2024 · Telecom · Canada</div>
-      <ul class="tl-bullets">
-        <li>Facilitated Agile Ceremonies for 3 concurrent squads delivering internal GenAI-powered chatbot</li>
-        <li>Maintained 94% sprint commitment achievement rate and consistent team velocity</li>
-        <li>Guided Agile pods (3 squads, 20+ members) on AI/ML best practices and agile methodologies</li>
-        <li>Introduced AI powered Jira board automation that reduced manual KPI tracking efforts by 30%</li>
-      </ul>
-    </div>
-
-    <!-- Bell Canada - Data Engineer -->
-    <div class="timeline-item">
-      <div class="tl-header">
-        <span class="tl-company">Bell Canada</span>
-        <span class="tl-role">— Data Engineer</span>
-      </div>
-      <div class="tl-meta">Jan 2023 – July 2024 · Telecom · Canada</div>
-      <ul class="tl-bullets">
-        <li>Architected and deployed Vertex AI-based data quality pipeline using fine-tuned LLMs (PaLM 2) for PII/PHI classification</li>
-        <li>Built and managed 100+ Apache Airflow DAGs on GCP to automate data workflows with integrated monitoring</li>
-        <li>Engineered real-time Kafka streaming pipelines in Python integrated with ELK stack</li>
-        <li>Migrated data from on-prem Hadoop to GCP BigQuery with HIPAA compliance and metadata cataloging</li>
-      </ul>
-    </div>
-
-    <!-- Vector Institute -->
-    <div class="timeline-item">
-      <div class="tl-header">
-        <span class="tl-company">Vector Institute for AI</span>
-        <span class="tl-role">— AI Education Associate</span>
-      </div>
-      <div class="tl-meta">Sept 2022 – Dec 2022 · AI Research · Canada</div>
-      <ul class="tl-bullets">
-        <li>Designed and delivered Machine Learning training programs for FastLane startup initiative</li>
-        <li>Covered courses: Deep Learning, Project Management with AI, and responsible AI governance</li>
-      </ul>
-    </div>
-
-    <!-- Amazon -->
-    <div class="timeline-item">
-      <div class="tl-header">
-        <span class="tl-company">Amazon</span>
-        <span class="tl-role">— Senior Program Associate</span>
-      </div>
-      <div class="tl-meta">July 2021 – Dec 2021 · FinTech · India</div>
-      <ul class="tl-bullets">
-        <li>Supported product and business leaders through customer analytics and market insights</li>
-        <li>Implemented NLP-based sentiment analysis on app reviews using Python for data-driven decisions</li>
-      </ul>
-    </div>
-
-    <!-- Bhopal Glues -->
-    <div class="timeline-item">
-      <div class="tl-header">
-        <span class="tl-company">Bhopal Glues and Chemicals</span>
-        <span class="tl-role">— Business Analyst</span>
-      </div>
-      <div class="tl-meta">Apr 2019 – June 2021 · Pharmaceutical · India</div>
-      <ul class="tl-bullets">
-        <li>Reduced FDA audit prep by 30% ensuring cGMP/GCP/GDP compliance via ERP implementations</li>
-        <li>Developed financial models and ROI analysis identifying cost-saving opportunities using SQL and Excel</li>
-        <li>Led ERP system implementations for QC workflows with ETL processes and data quality standards</li>
-      </ul>
-    </div>
-  </div>
-</section>
-
-<div class="section-divider"></div>
-
-<!-- ═══════════════ GITHUB PROJECTS ═══════════════ -->
-<section id="github-projects" class="github-projects-section">
-  <div class="reveal">
-    <span class="section-label">// GitHub Projects</span>
-    <h2 class="section-title">Featured Data & AI Projects</h2>
-    <p class="section-desc">Explore my technical implementations and open-source contributions. Click any project to view on GitHub.</p>
-  </div>
-  
-  <div class="github-projects-grid reveal reveal-delay-1">
-    <!-- Data Projects -->
-    <a href="https://github.com/sankshine" target="_blank" class="github-project-card">
-      <h4><svg viewBox="0 0 16 16"><path d="M8 0C3.58 0 0 3.58 0 8c0 3.54 2.29 6.53 5.47 7.59.4.07.55-.17.55-.38 0-.19-.01-.82-.01-1.49-2.01.37-2.53-.49-2.69-.94-.09-.23-.48-.94-.82-1.13-.28-.15-.68-.52-.01-.53.63-.01 1.08.58 1.23.82.72 1.21 1.87.87 2.33.66.07-.52.28-.87.51-1.07-1.78-.2-3.64-.89-3.64-3.95 0-.87.31-1.59.82-2.15-.08-.2-.36-1.02.08-2.12 0 0 .67-.21 2.2.82.64-.18 1.32-.27 2-.27.68 0 1.36.09 2 .27 1.53-1.04 2.2-.82 2.2-.82.44 1.1.16 1.92.08 2.12.51.56.82 1.27.82 2.15 0 3.07-1.87 3.75-3.65 3.95.29.25.54.73.54 1.48 0 1.07-.01 1.93-.01 2.2 0 .21.15.46.55.38A8.013 8.013 0 0016 8c0-4.42-3.58-8-8-8z"/></svg> GTM Strategy for 5 FinOps Data Products</h4>
-      <p>Complete go-to-market strategy framework for 5 enterprise FinOps data products, including user segmentation, pricing models, and adoption metrics.</p>
-      <div class="project-type-badge data-project">Data Project</div>
-    </a>
-    
-    <a href="https://github.com/sankshine" target="_blank" class="github-project-card">
-      <h4><svg viewBox="0 0 16 16"><path d="M8 0C3.58 0 0 3.58 0 8c0 3.54 2.29 6.53 5.47 7.59.4.07.55-.17.55-.38 0-.19-.01-.82-.01-1.49-2.01.37-2.53-.49-2.69-.94-.09-.23-.48-.94-.82-1.13-.28-.15-.68-.52-.01-.53.63-.01 1.08.58 1.23.82.72 1.21 1.87.87 2.33.66.07-.52.28-.87.51-1.07-1.78-.2-3.64-.89-3.64-3.95 0-.87.31-1.59.82-2.15-.08-.2-.36-1.02.08-2.12 0 0 .67-.21 2.2.82.64-.18 1.32-.27 2-.27.68 0 1.36.09 2 .27 1.53-1.04 2.2-.82 2.2-.82.44 1.1.16 1.92.08 2.12.51.56.82 1.27.82 2.15 0 3.07-1.87 3.75-3.65 3.95.29.25.54.73.54 1.48 0 1.07-.01 1.93-.01 2.2 0 .21.15.46.55.38A8.013 8.013 0 0016 8c0-4.42-3.58-8-8-8z"/></svg> On-prem to GCP Migration</h4>
-      <p>Complete migration pipeline from on-prem Hadoop/Oracle to GCP BigQuery with IAM security, HIPAA compliance, and Collibra metadata cataloging.</p>
-      <div class="project-type-badge data-project">Data Project</div>
-    </a>
-    
-    <a href="https://github.com/sankshine" target="_blank" class="github-project-card">
-      <h4><svg viewBox="0 0 16 16"><path d="M8 0C3.58 0 0 3.58 0 8c0 3.54 2.29 6.53 5.47 7.59.4.07.55-.17.55-.38 0-.19-.01-.82-.01-1.49-2.01.37-2.53-.49-2.69-.94-.09-.23-.48-.94-.82-1.13-.28-.15-.68-.52-.01-.53.63-.01 1.08.58 1.23.82.72 1.21 1.87.87 2.33.66.07-.52.28-.87.51-1.07-1.78-.2-3.64-.89-3.64-3.95 0-.87.31-1.59.82-2.15-.08-.2-.36-1.02.08-2.12 0 0 .67-.21 2.2.82.64-.18 1.32-.27 2-.27.68 0 1.36.09 2 .27 1.53-1.04 2.2-.82 2.2-.82.44 1.1.16 1.92.08 2.12.51.56.82 1.27.82 2.15 0 3.07-1.87 3.75-3.65 3.95.29.25.54.73.54 1.48 0 1.07-.01 1.93-.01 2.2 0 .21.15.46.55.38A8.013 8.013 0 0016 8c0-4.42-3.58-8-8-8z"/></svg> Airflow DAGs Orchestration</h4>
-      <p>100+ production-grade Airflow DAGs for data pipeline orchestration, monitoring dashboards, and automated Slack/email alerting systems.</p>
-      <div class="project-type-badge data-project">Data Project</div>
-    </a>
-    
-    <a href="https://github.com/sankshine" target="_blank" class="github-project-card">
-      <h4><svg viewBox="0 0 16 16"><path d="M8 0C3.58 0 0 3.58 0 8c0 3.54 2.29 6.53 5.47 7.59.4.07.55-.17.55-.38 0-.19-.01-.82-.01-1.49-2.01.37-2.53-.49-2.69-.94-.09-.23-.48-.94-.82-1.13-.28-.15-.68-.52-.01-.53.63-.01 1.08.58 1.23.82.72 1.21 1.87.87 2.33.66.07-.52.28-.87.51-1.07-1.78-.2-3.64-.89-3.64-3.95 0-.87.31-1.59.82-2.15-.08-.2-.36-1.02.08-2.12 0 0 .67-.21 2.2.82.64-.18 1.32-.27 2-.27.68 0 1.36.09 2 .27 1.53-1.04 2.2-.82 2.2-.82.44 1.1.16 1.92.08 2.12.51.56.82 1.27.82 2.15 0 3.07-1.87 3.75-3.65 3.95.29.25.54.73.54 1.48 0 1.07-.01 1.93-.01 2.2 0 .21.15.46.55.38A8.013 8.013 0 0016 8c0-4.42-3.58-8-8-8z"/></svg> Kafka Streaming Pipelines</h4>
-      <p>Real-time streaming data pipelines using Apache Kafka for high-throughput event processing with ELK stack integration and performance optimization.</p>
-      <div class="project-type-badge data-project">Data Project</div>
-    </a>
-    
-    <!-- AI Projects -->
-    <a href="https://github.com/sankshine" target="_blank" class="github-project-card">
-      <h4><svg viewBox="0 0 16 16"><path d="M8 0C3.58 0 0 3.58 0 8c0 3.54 2.29 6.53 5.47 7.59.4.07.55-.17.55-.38 0-.19-.01-.82-.01-1.49-2.01.37-2.53-.49-2.69-.94-.09-.23-.48-.94-.82-1.13-.28-.15-.68-.52-.01-.53.63-.01 1.08.58 1.23.82.72 1.21 1.87.87 2.33.66.07-.52.28-.87.51-1.07-1.78-.2-3.64-.89-3.64-3.95 0-.87.31-1.59.82-2.15-.08-.2-.36-1.02.08-2.12 0 0 .67-.21 2.2.82.64-.18 1.32-.27 2-.27.68 0 1.36.09 2 .27 1.53-1.04 2.2-.82 2.2-.82.44 1.1.16 1.92.08 2.12.51.56.82 1.27.82 2.15 0 3.07-1.87 3.75-3.65 3.95.29.25.54.73.54 1.48 0 1.07-.01 1.93-.01 2.2 0 .21.15.46.55.38A8.013 8.013 0 0016 8c0-4.42-3.58-8-8-8z"/></svg> Real Estate Agentic AI</h4>
-      <p>Multi-agent AI solution for real estate document processing using LangGraph orchestration and Milvus vector database for intelligent automation.</p>
-      <div class="project-type-badge ai-project">AI Project</div>
-    </a>
-    
-    <a href="https://github.com/sankshine" target="_blank" class="github-project-card">
-      <h4><svg viewBox="0 0 16 16"><path d="M8 0C3.58 0 0 3.58 0 8c0 3.54 2.29 6.53 5.47 7.59.4.07.55-.17.55-.38 0-.19-.01-.82-.01-1.49-2.01.37-2.53-.49-2.69-.94-.09-.23-.48-.94-.82-1.13-.28-.15-.68-.52-.01-.53.63-.01 1.08.58 1.23.82.72 1.21 1.87.87 2.33.66.07-.52.28-.87.51-1.07-1.78-.2-3.64-.89-3.64-3.95 0-.87.31-1.59.82-2.15-.08-.2-.36-1.02.08-2.12 0 0 .67-.21 2.2.82.64-.18 1.32-.27 2-.27.68 0 1.36.09 2 .27 1.53-1.04 2.2-.82 2.2-.82.44 1.1.16 1.92.08 2.12.51.56.82 1.27.82 2.15 0 3.07-1.87 3.75-3.65 3.95.29.25.54.73.54 1.48 0 1.07-.01 1.93-.01 2.2 0 .21.15.46.55.38A8.013 8.013 0 0016 8c0-4.42-3.58-8-8-8z"/></svg> Gen-AI Copilot for Tickets</h4>
-      <p>Generative AI co-pilot for IT support ticket resolution using RAG architecture with multi-step validation layers for accurate responses.</p>
-      <div class="project-type-badge ai-project">AI Project</div>
-    </a>
-    
-    <a href="https://github.com/sankshine" target="_blank" class="github-project-card">
-      <h4><svg viewBox="0 0 16 16"><path d="M8 0C3.58 0 0 3.58 0 8c0 3.54 2.29 6.53 5.47 7.59.4.07.55-.17.55-.38 0-.19-.01-.82-.01-1.49-2.01.37-2.53-.49-2.69-.94-.09-.23-.48-.94-.82-1.13-.28-.15-.68-.52-.01-.53.63-.01 1.08.58 1.23.82.72 1.21 1.87.87 2.33.66.07-.52.28-.87.51-1.07-1.78-.2-3.64-.89-3.64-3.95 0-.87.31-1.59.82-2.15-.08-.2-.36-1.02.08-2.12 0 0 .67-.21 2.2.82.64-.18 1.32-.27 2-.27.68 0 1.36.09 2 .27 1.53-1.04 2.2-.82 2.2-.82.44 1.1.16 1.92.08 2.12.51.56.82 1.27.82 2.15 0 3.07-1.87 3.75-3.65 3.95.29.25.54.73.54 1.48 0 1.07-.01 1.93-.01 2.2 0 .21.15.46.55.38A8.013 8.013 0 0016 8c0-4.42-3.58-8-8-8z"/></svg> $500 Data Usage Alert Automation</h4>
-      <p>n8n workflow automation for monitoring data usage costs with automated alerts at $500 thresholds and escalation procedures.</p>
-      <div class="project-type-badge ai-project">AI Project</div>
-    </a>
-    
-    <a href="https://github.com/sankshine" target="_blank" class="github-project-card">
-      <h4><svg viewBox="0 0 16 16"><path d="M8 0C3.58 0 0 3.58 0 8c0 3.54 2.29 6.53 5.47 7.59.4.07.55-.17.55-.38 0-.19-.01-.82-.01-1.49-2.01.37-2.53-.49-2.69-.94-.09-.23-.48-.94-.82-1.13-.28-.15-.68-.52-.01-.53.63-.01 1.08.58 1.23.82.72 1.21 1.87.87 2.33.66.07-.52.28-.87.51-1.07-1.78-.2-3.64-.89-3.64-3.95 0-.87.31-1.59.82-2.15-.08-.2-.36-1.02.08-2.12 0 0 .67-.21 2.2.82.64-.18 1.32-.27 2-.27.68 0 1.36.09 2 .27 1.53-1.04 2.2-.82 2.2-.82.44 1.1.16 1.92.08 2.12.51.56.82 1.27.82 2.15 0 3.07-1.87 3.75-3.65 3.95.29.25.54.73.54 1.48 0 1.07-.01 1.93-.01 2.2 0 .21.15.46.55.38A8.013 8.013 0 0016 8c0-4.42-3.58-8-8-8z"/></svg> Alex AI Chatbot</h4>
-      <p>Enterprise-grade AI chatbot with natural language processing capabilities for customer service and internal knowledge base queries.</p>
-      <div class="project-type-badge ai-project">AI Project</div>
-    </a>
-    
-    <a href="https://github.com/sankshine" target="_blank" class="github-project-card">
-      <h4><svg viewBox="0 0 16 16"><path d="M8 0C3.58 0 0 3.58 0 8c0 3.54 2.29 6.53 5.47 7.59.4.07.55-.17.55-.38 0-.19-.01-.82-.01-1.49-2.01.37-2.53-.49-2.69-.94-.09-.23-.48-.94-.82-1.13-.28-.15-.68-.52-.01-.53.63-.01 1.08.58 1.23.82.72 1.21 1.87.87 2.33.66.07-.52.28-.87.51-1.07-1.78-.2-3.64-.89-3.64-3.95 0-.87.31-1.59.82-2.15-.08-.2-.36-1.02.08-2.12 0 0 .67-.21 2.2.82.64-.18 1.32-.27 2-.27.68 0 1.36.09 2 .27 1.53-1.04 2.2-.82 2.2-.82.44 1.1.16 1.92.08 2.12.51.56.82 1.27.82 2.15 0 3.07-1.87 3.75-3.65 3.95.29.25.54.73.54 1.48 0 1.07-.01 1.93-.01 2.2 0 .21.15.46.55.38A8.013 8.013 0 0016 8c0-4.42-3.58-8-8-8z"/></svg> PaLM2 Based Data Classifier</h4>
-      <p>Fine-tuned PaLM2 model for automated data classification, tagging, and categorization with healthcare-specific compliance layers.</p>
-      <div class="project-type-badge ai-project">AI Project</div>
-    </a>
-  </div>
-</section>
-
-<div class="section-divider"></div>
-
-<!-- ═══════════════ CONTACT ═══════════════ -->
-<section id="contact" class="contact-section">
-  <div class="reveal">
-    <span class="section-label">// Contact</span>
-    <h2 class="section-title">Let's Connect</h2>
-    <p class="section-desc">Interested in AI/ML healthcare solutions, product leadership, or technical collaboration? Reach out.</p>
-  </div>
-  <div class="contact-grid reveal reveal-delay-1">
-    <a href="mailto:khan17sana@gmail.com" class="contact-card">
-      <div class="contact-icon">✉</div>
-      <div>
-        <div class="contact-label">Email</div>
-        <div class="contact-value">khan17sana@gmail.com</div>
-      </div>
-    </a>
-    <a href="https://www.linkedin.com/in/sankshine" target="_blank" class="contact-card">
-      <div class="contact-icon">in</div>
-      <div>
-        <div class="contact-label">LinkedIn</div>
-        <div class="contact-value">linkedin.com/in/sankshine</div>
-      </div>
-    </a>
-    <a href="https://github.com/sankshine" target="_blank" class="contact-card">
-      <div class="contact-icon"><svg viewBox="0 0 16 16"><path d="M8 0C3.58 0 0 3.58 0 8c0 3.54 2.29 6.53 5.47 7.59.4.07.55-.17.55-.38 0-.19-.01-.82-.01-1.49-2.01.37-2.53-.49-2.69-.94-.09-.23-.48-.94-.82-1.13-.28-.15-.68-.52-.01-.53.63-.01 1.08.58 1.23.82.72 1.21 1.87.87 2.33.66.07-.52.28-.87.51-1.07-1.78-.2-3.64-.89-3.64-3.95 0-.87.31-1.59.82-2.15-.08-.2-.36-1.02.08-2.12 0 0 .67-.21 2.2.82.64-.18 1.32-.27 2-.27.68 0 1.36.09 2 .27 1.53-1.04 2.2-.82 2.2-.82.44 1.1.16 1.92.08 2.12.51.56.82 1.27.82 2.15 0 3.07-1.87 3.75-3.65 3.95.29.25.54.73.54 1.48 0 1.07-.01 1.93-.01 2.2 0 .21.15.46.55.38A8.013 8.013 0 0016 8c0-4.42-3.58-8-8-8z"/></svg></div>
-      <div>
-        <div class="contact-label">GitHub</div>
-        <div class="contact-value">github.com/sankshine</div>
-      </div>
-    </a>
-    <a href="tel:+1-437-833-9757" class="contact-card">
-      <div class="contact-icon">📱</div>
-      <div>
-        <div class="contact-label">Phone</div>
-        <div class="contact-value">+1 (437) 833-9757</div>
-      </div>
-    </a>
-  </div>
-</section>
-
-<!-- ═══════════════ FOOTER ═══════════════ -->
-<footer>
-  © 2026 Sana Khan · Sr. Technical Product Manager Candidate @ Mckesson· Healthcare AI/ML · Canada
-</footer>
-
-<!-- ═══════════════ SCRIPTS ═══════════════ -->
-<script>
-// Nav scroll effect
-const nav = document.getElementById('nav');
-window.addEventListener('scroll', () => {
-  nav.classList.toggle('scrolled', window.scrollY > 60);
-});
-
-// Mobile nav toggle
-const navToggle = document.getElementById('navToggle');
-const navLinks = document.getElementById('navLinks');
-navToggle.addEventListener('click', () => {
-  navLinks.classList.toggle('open');
-});
-navLinks.querySelectorAll('a').forEach(a => {
-  a.addEventListener('click', () => navLinks.classList.remove('open'));
-});
-
-// Scroll reveal
-const reveals = document.querySelectorAll('.reveal');
-const observer = new IntersectionObserver((entries) => {
-  entries.forEach(entry => {
-    if (entry.isIntersecting) {
-      entry.target.classList.add('visible');
-    }
-  });
-}, { threshold: 0.1, rootMargin: '0px 0px -50px 0px' });
-reveals.forEach(el => observer.observe(el));
-
-// Smooth scroll for anchor links
-document.querySelectorAll('a[href^="#"]').forEach(anchor => {
-  anchor.addEventListener('click', function(e) {
-    e.preventDefault();
-    const target = document.querySelector(this.getAttribute('href'));
-    if (target) {
-      target.scrollIntoView({ behavior: 'smooth', block: 'start' });
-    }
-  });
-});
-</script>
-</body>
-</html>
