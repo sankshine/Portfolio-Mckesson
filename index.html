@@ -3,32 +3,32 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Pranav Gandhi — AI-Powered Technical Recruiter</title>
+<title>Sana Khan — Sr. Technical Product Manager Candidate | Mckesson</title>
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Syne:wght@400;500;600;700;800&family=DM+Sans:ital,opsz,wght@0,9..40,300;0,9..40,400;0,9..40,500;1,9..40,300;1,9..40,400&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
 <style>
 /* ═══════════════════════════════════════════
-   CSS VARIABLES & RESET
+   CSS VARIABLES & RESET - McKesson Palette
    ═══════════════════════════════════════════ */
 :root {
-  --bg-primary: #08090d;
-  --bg-secondary: #0e1017;
-  --bg-card: #12141c;
-  --bg-card-hover: #181b26;
-  --border: #1e2130;
-  --border-accent: #2a3050;
-  --text-primary: #e8eaf0;
-  --text-secondary: #8b90a5;
-  --text-muted: #555a72;
-  --accent: #6c5ce7;
-  --accent-bright: #a78bfa;
-  --accent-glow: rgba(108, 92, 231, 0.15);
-  --cyan: #00d2ff;
-  --cyan-glow: rgba(0, 210, 255, 0.1);
-  --green: #10b981;
-  --orange: #f59e0b;
-  --pink: #ec4899;
+  --bg-primary: #0B1F3A;
+  --bg-secondary: #102A44;
+  --bg-card: #1E2E4A;
+  --bg-card-hover: #25355A;
+  --border: #2F5F8F;
+  --border-accent: #3B6FA5;
+  --text-primary: #F2F5F7;
+  --text-secondary: #C8D46A;
+  --text-muted: #7DB37A;
+  --accent: #4F8F8B;
+  --accent-bright: #5FA3A0;
+  --accent-glow: rgba(79, 143, 139, 0.15);
+  --cyan: #3B6FA5;
+  --cyan-glow: rgba(59, 111, 165, 0.1);
+  --green: #8FCF8A;
+  --orange: #D6E06F;
+  --pink: #7DB37A;
   --font-display: 'Syne', sans-serif;
   --font-body: 'DM Sans', sans-serif;
   --font-mono: 'JetBrains Mono', monospace;
@@ -54,7 +54,7 @@ body {
 
 ::selection {
   background: var(--accent);
-  color: #fff;
+  color: var(--text-primary);
 }
 
 /* ═══════════════════════════════════════════
@@ -66,14 +66,14 @@ body::before {
   inset: 0;
   z-index: 9999;
   pointer-events: none;
-  opacity: 0.025;
+  opacity: 0.015;
   background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 256 256' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.9' numOctaves='4' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)'/%3E%3C/svg%3E");
   background-repeat: repeat;
   background-size: 200px;
 }
 
 /* ═══════════════════════════════════════════
-   AMBIENT BACKGROUND GLOW
+   AMBIENT BACKGROUND GLOW - Healthcare Theme
    ═══════════════════════════════════════════ */
 .ambient-glow {
   position: fixed;
@@ -86,23 +86,23 @@ body::before {
   position: absolute;
   border-radius: 50%;
   filter: blur(120px);
-  opacity: 0.07;
+  opacity: 0.08;
 }
 .ambient-glow .orb:nth-child(1) {
   width: 600px; height: 600px;
-  background: var(--accent);
+  background: var(--cyan);
   top: -10%; left: -5%;
   animation: float1 25s ease-in-out infinite;
 }
 .ambient-glow .orb:nth-child(2) {
   width: 500px; height: 500px;
-  background: var(--cyan);
+  background: var(--accent);
   bottom: -10%; right: -5%;
   animation: float2 30s ease-in-out infinite;
 }
 .ambient-glow .orb:nth-child(3) {
   width: 400px; height: 400px;
-  background: var(--pink);
+  background: var(--green);
   top: 40%; left: 50%;
   animation: float3 20s ease-in-out infinite;
 }
@@ -123,7 +123,7 @@ body::before {
 }
 
 /* ═══════════════════════════════════════════
-   NAVIGATION
+   NAVIGATION - Healthcare Professional
    ═══════════════════════════════════════════ */
 nav {
   position: fixed;
@@ -135,14 +135,14 @@ nav {
   display: flex;
   align-items: center;
   justify-content: space-between;
-  background: rgba(8, 9, 13, 0.7);
+  background: rgba(11, 31, 58, 0.85);
   backdrop-filter: blur(20px);
   border-bottom: 1px solid var(--border);
   transition: all 0.4s var(--ease-out-expo);
 }
 nav.scrolled {
   padding: 0.7rem 2rem;
-  background: rgba(8, 9, 13, 0.92);
+  background: rgba(11, 31, 58, 0.95);
 }
 .nav-logo {
   font-family: var(--font-display);
@@ -152,7 +152,7 @@ nav.scrolled {
   color: var(--text-primary);
   text-decoration: none;
 }
-.nav-logo span { color: var(--accent-bright); }
+.nav-logo span { color: var(--green); }
 .nav-links { display: flex; gap: 2rem; align-items: center; }
 .nav-links a {
   font-family: var(--font-mono);
@@ -171,7 +171,7 @@ nav.scrolled {
   left: 0;
   width: 0;
   height: 1px;
-  background: var(--accent-bright);
+  background: var(--green);
   transition: width 0.3s var(--ease-out-expo);
 }
 .nav-links a:hover { color: var(--text-primary); }
@@ -179,7 +179,7 @@ nav.scrolled {
 
 .nav-cta {
   background: var(--accent) !important;
-  color: #fff !important;
+  color: var(--text-primary) !important;
   padding: 0.5rem 1.2rem;
   border-radius: 6px;
   transition: all 0.3s !important;
@@ -192,7 +192,6 @@ nav.scrolled {
 }
 .nav-cta::after { display: none !important; }
 
-/* GitHub nav link icon */
 .nav-github {
   display: inline-flex;
   align-items: center;
@@ -206,7 +205,6 @@ nav.scrolled {
 }
 .nav-github:hover svg { fill: var(--text-primary); }
 
-/* Mobile nav */
 .nav-toggle { display: none; background: none; border: none; cursor: pointer; padding: 0.5rem; }
 .nav-toggle span { display: block; width: 22px; height: 2px; background: var(--text-secondary); margin: 5px 0; transition: all 0.3s; }
 
@@ -223,7 +221,7 @@ nav.scrolled {
 }
 
 /* ═══════════════════════════════════════════
-   HERO
+   HERO - Healthcare Product Leader
    ═══════════════════════════════════════════ */
 .hero {
   position: relative;
@@ -242,7 +240,7 @@ nav.scrolled {
   font-size: 0.8rem;
   letter-spacing: 0.15em;
   text-transform: uppercase;
-  color: var(--accent-bright);
+  color: var(--green);
   margin-bottom: 1.5rem;
   opacity: 0;
   animation: fadeUp 0.8s var(--ease-out-expo) 0.2s forwards;
@@ -257,23 +255,23 @@ nav.scrolled {
   vertical-align: middle;
 }
 @keyframes pulse {
-  0%, 100% { opacity: 1; box-shadow: 0 0 0 0 rgba(16, 185, 129, 0.4); }
-  50% { opacity: 0.8; box-shadow: 0 0 0 8px rgba(16, 185, 129, 0); }
+  0%, 100% { opacity: 1; box-shadow: 0 0 0 0 rgba(143, 207, 138, 0.4); }
+  50% { opacity: 0.8; box-shadow: 0 0 0 8px rgba(143, 207, 138, 0); }
 }
 
 .hero h1 {
   font-family: var(--font-display);
-  font-size: clamp(3rem, 7.5vw, 6rem);
+  font-size: clamp(3rem, 7.5vw, 5.5rem);
   font-weight: 800;
   line-height: 1.0;
   letter-spacing: -0.04em;
-  margin-bottom: 2rem;
+  margin-bottom: 1.5rem;
   opacity: 0;
   animation: fadeUp 0.8s var(--ease-out-expo) 0.4s forwards;
 }
 .hero h1 .line { display: block; }
 .hero h1 .gradient {
-  background: linear-gradient(135deg, var(--accent-bright) 0%, var(--cyan) 50%, var(--accent-bright) 100%);
+  background: linear-gradient(135deg, var(--green) 0%, var(--cyan) 50%, var(--accent-bright) 100%);
   background-size: 200% auto;
   -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;
@@ -289,7 +287,7 @@ nav.scrolled {
   font-size: 1.2rem;
   line-height: 1.7;
   color: var(--text-secondary);
-  max-width: 640px;
+  max-width: 700px;
   margin-bottom: 2.5rem;
   opacity: 0;
   animation: fadeUp 0.8s var(--ease-out-expo) 0.6s forwards;
@@ -309,7 +307,7 @@ nav.scrolled {
   gap: 0.5rem;
   padding: 0.85rem 2rem;
   background: var(--accent);
-  color: #fff;
+  color: var(--text-primary);
   font-family: var(--font-body);
   font-weight: 500;
   font-size: 0.95rem;
@@ -342,12 +340,11 @@ nav.scrolled {
   transition: all 0.3s var(--ease-out-expo);
 }
 .btn-outline:hover {
-  border-color: var(--accent-bright);
-  background: var(--accent-glow);
+  border-color: var(--green);
+  background: rgba(143, 207, 138, 0.1);
   transform: translateY(-2px);
 }
 
-/* Hero Stats */
 .hero-stats {
   display: flex;
   gap: 3rem;
@@ -364,7 +361,7 @@ nav.scrolled {
   color: var(--text-primary);
   line-height: 1;
 }
-.hero-stat .number span { color: var(--accent-bright); }
+.hero-stat .number span { color: var(--green); }
 .hero-stat .label {
   font-size: 0.82rem;
   color: var(--text-muted);
@@ -398,7 +395,7 @@ section {
   font-size: 0.75rem;
   letter-spacing: 0.18em;
   text-transform: uppercase;
-  color: var(--accent-bright);
+  color: var(--green);
   margin-bottom: 1rem;
 }
 .section-title {
@@ -436,7 +433,6 @@ section {
 }
 .about-text strong { color: var(--text-primary); font-weight: 500; }
 
-/* Tag cloud */
 .tag-cloud { display: flex; flex-wrap: wrap; gap: 0.5rem; margin-top: 2rem; }
 .tag {
   font-family: var(--font-mono);
@@ -450,10 +446,9 @@ section {
   transition: all 0.3s;
   white-space: nowrap;
 }
-.tag:hover { border-color: var(--accent-bright); color: var(--accent-bright); background: var(--accent-glow); }
-.tag.highlight { border-color: var(--accent); color: var(--accent-bright); background: var(--accent-glow); }
+.tag:hover { border-color: var(--green); color: var(--green); background: rgba(143, 207, 138, 0.1); }
+.tag.highlight { border-color: var(--accent); color: var(--green); background: var(--accent-glow); }
 
-/* Terminal card on right */
 .terminal {
   background: var(--bg-card);
   border: 1px solid var(--border);
@@ -495,7 +490,7 @@ section {
 .terminal-body .output { color: var(--accent-bright); }
 
 /* ═══════════════════════════════════════════
-   AI TOOLKIT — HORIZONTAL SCROLL CARDS
+   DATA PROJECTS — HORIZONTAL SCROLL CARDS
    ═══════════════════════════════════════════ */
 .toolkit-scroll-wrapper {
   margin: 0 -2rem;
@@ -513,7 +508,7 @@ section {
   width: max-content;
 }
 .tool-card {
-  width: 260px;
+  width: 280px;
   flex-shrink: 0;
   background: var(--bg-card);
   border: 1px solid var(--border);
@@ -528,7 +523,7 @@ section {
   position: absolute;
   top: 0; left: 0; right: 0;
   height: 2px;
-  background: linear-gradient(90deg, transparent, var(--accent-bright), transparent);
+  background: linear-gradient(90deg, transparent, var(--green), transparent);
   opacity: 0;
   transition: opacity 0.4s;
 }
@@ -565,9 +560,9 @@ section {
   border-radius: 4px;
   margin-top: 0.8rem;
 }
-.tool-badge.llm { background: rgba(108,92,231,0.15); color: var(--accent-bright); }
-.tool-badge.auto { background: rgba(0,210,255,0.1); color: var(--cyan); }
-.tool-badge.dev { background: rgba(16,185,129,0.1); color: var(--green); }
+.tool-badge.llm { background: rgba(95, 163, 160, 0.15); color: var(--accent-bright); }
+.tool-badge.auto { background: rgba(59, 111, 165, 0.1); color: var(--cyan); }
+.tool-badge.dev { background: rgba(143, 207, 138, 0.1); color: var(--green); }
 
 /* ═══════════════════════════════════════════
    PROJECTS — FEATURED CARDS
@@ -650,7 +645,6 @@ section {
   color: var(--text-muted);
 }
 
-/* GitHub repo link inside project cards */
 .project-github {
   display: inline-flex;
   align-items: center;
@@ -675,8 +669,8 @@ section {
 }
 .project-github:hover {
   color: var(--text-primary);
-  border-color: var(--accent-bright);
-  background: var(--accent-glow);
+  border-color: var(--green);
+  background: rgba(143, 207, 138, 0.1);
   transform: translateX(4px);
 }
 .project-github .arrow {
@@ -686,7 +680,6 @@ section {
   transform: translateX(3px);
 }
 
-/* Project visual — styled code block */
 .project-visual {
   background: rgba(0,0,0,0.3);
   border: 1px solid var(--border);
@@ -735,11 +728,11 @@ section {
   transition: all 0.3s;
 }
 .timeline-item:first-child::before {
-  border-color: var(--accent-bright);
-  box-shadow: 0 0 0 4px var(--accent-glow);
+  border-color: var(--green);
+  box-shadow: 0 0 0 4px rgba(143, 207, 138, 0.3);
 }
 .timeline-item:hover::before {
-  border-color: var(--accent-bright);
+  border-color: var(--green);
   background: var(--accent);
 }
 
@@ -773,7 +766,7 @@ section {
   content: '›';
   position: absolute;
   left: 0;
-  color: var(--accent-bright);
+  color: var(--green);
   font-weight: 700;
 }
 .tl-highlight {
@@ -791,11 +784,70 @@ section {
 .tl-highlight strong { color: var(--accent-bright); }
 
 /* ═══════════════════════════════════════════
+   GITHUB SECTION
+   ═══════════════════════════════════════════ */
+.github-section {
+  text-align: center;
+}
+.github-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+  gap: 1.5rem;
+  margin-top: 2rem;
+}
+.github-card {
+  background: var(--bg-card);
+  border: 1px solid var(--border);
+  border-radius: 12px;
+  padding: 2rem;
+  text-decoration: none;
+  color: var(--text-primary);
+  transition: all 0.3s var(--ease-out-expo);
+  text-align: left;
+}
+.github-card:hover {
+  border-color: var(--green);
+  background: var(--bg-card-hover);
+  transform: translateY(-3px);
+  box-shadow: 0 10px 30px rgba(0,0,0,0.2);
+}
+.github-card h4 {
+  font-family: var(--font-display);
+  font-size: 1.1rem;
+  margin-bottom: 0.8rem;
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+}
+.github-card h4 svg {
+  width: 18px;
+  height: 18px;
+  fill: currentColor;
+}
+.github-card p {
+  font-size: 0.85rem;
+  color: var(--text-secondary);
+  line-height: 1.6;
+  margin-bottom: 1rem;
+}
+.github-stats {
+  display: flex;
+  gap: 1rem;
+  font-family: var(--font-mono);
+  font-size: 0.75rem;
+  color: var(--text-muted);
+}
+.github-stats span {
+  display: flex;
+  align-items: center;
+  gap: 0.3rem;
+}
+
+/* ═══════════════════════════════════════════
    CONTACT
    ═══════════════════════════════════════════ */
 .contact-section {
   text-align: center;
-  padding: 8rem 2rem;
 }
 .contact-section .section-title {
   margin-bottom: 1rem;
@@ -824,7 +876,7 @@ section {
   min-width: 260px;
 }
 .contact-card:hover {
-  border-color: var(--accent-bright);
+  border-color: var(--green);
   background: var(--bg-card-hover);
   transform: translateY(-3px);
   box-shadow: 0 10px 30px rgba(0,0,0,0.2);
@@ -907,14 +959,14 @@ footer {
 
 <!-- ═══════════════ NAV ═══════════════ -->
 <nav id="nav">
-  <a href="#" class="nav-logo">PG<span>.</span></a>
+  <a href="#" class="nav-logo">SK<span>.</span></a>
   <div class="nav-links" id="navLinks">
     <a href="#about">About</a>
-    <a href="#toolkit">AI Toolkit</a>
-    <a href="#projects">Projects</a>
+    <a href="#data-projects">Data Projects</a>
+    <a href="#ai-projects">AI Projects</a>
     <a href="#experience">Experience</a>
-    <a href="https://github.com/pranavgandhirecruiting-star" target="_blank" class="nav-github"><svg viewBox="0 0 16 16"><path d="M8 0C3.58 0 0 3.58 0 8c0 3.54 2.29 6.53 5.47 7.59.4.07.55-.17.55-.38 0-.19-.01-.82-.01-1.49-2.01.37-2.53-.49-2.69-.94-.09-.23-.48-.94-.82-1.13-.28-.15-.68-.52-.01-.53.63-.01 1.08.58 1.23.82.72 1.21 1.87.87 2.33.66.07-.52.28-.87.51-1.07-1.78-.2-3.64-.89-3.64-3.95 0-.87.31-1.59.82-2.15-.08-.2-.36-1.02.08-2.12 0 0 .67-.21 2.2.82.64-.18 1.32-.27 2-.27.68 0 1.36.09 2 .27 1.53-1.04 2.2-.82 2.2-.82.44 1.1.16 1.92.08 2.12.51.56.82 1.27.82 2.15 0 3.07-1.87 3.75-3.65 3.95.29.25.54.73.54 1.48 0 1.07-.01 1.93-.01 2.2 0 .21.15.46.55.38A8.013 8.013 0 0016 8c0-4.42-3.58-8-8-8z"/></svg> GitHub</a>
-    <a href="#contact" class="nav-cta">Get in Touch</a>
+    <a href="https://github.com/sankshine" target="_blank" class="nav-github"><svg viewBox="0 0 16 16"><path d="M8 0C3.58 0 0 3.58 0 8c0 3.54 2.29 6.53 5.47 7.59.4.07.55-.17.55-.38 0-.19-.01-.82-.01-1.49-2.01.37-2.53-.49-2.69-.94-.09-.23-.48-.94-.82-1.13-.28-.15-.68-.52-.01-.53.63-.01 1.08.58 1.23.82.72 1.21 1.87.87 2.33.66.07-.52.28-.87.51-1.07-1.78-.2-3.64-.89-3.64-3.95 0-.87.31-1.59.82-2.15-.08-.2-.36-1.02.08-2.12 0 0 .67-.21 2.2.82.64-.18 1.32-.27 2-.27.68 0 1.36.09 2 .27 1.53-1.04 2.2-.82 2.2-.82.44 1.1.16 1.92.08 2.12.51.56.82 1.27.82 2.15 0 3.07-1.87 3.75-3.65 3.95.29.25.54.73.54 1.48 0 1.07-.01 1.93-.01 2.2 0 .21.15.46.55.38A8.013 8.013 0 0016 8c0-4.42-3.58-8-8-8z"/></svg> GitHub</a>
+    <a href="#contact" class="nav-cta">Contact</a>
   </div>
   <button class="nav-toggle" id="navToggle" aria-label="Toggle navigation">
     <span></span><span></span><span></span>
@@ -923,35 +975,35 @@ footer {
 
 <!-- ═══════════════ HERO ═══════════════ -->
 <header class="hero">
-  <div class="hero-eyebrow"><span class="dot"></span> Available for opportunities</div>
+  <div class="hero-eyebrow"><span class="dot"></span> Sr. Technical Product Manager</div>
   <h1>
-    <span class="line">I don't just recruit</span>
-    <span class="line"><span class="gradient">AI engineers.</span></span>
-    <span class="line">I build like one.</span>
+    <span class="line">Sana Khan</span>
+    <span class="line"><span class="gradient">Data AI/ML</span></span>
+    <span class="line">Product Leader</span>
   </h1>
   <p class="hero-sub">
-    Senior Technical Recruiter with 10+ years hiring IC5–IC7 engineers across AI/ML, distributed systems, and LLM infrastructure — now building AI-native tools that are redefining how recruiting gets done.
+    Strategic AI Product Manager with 7+ years leading Data and AI/ML product development across Telecom, FinTech, Pharma, and Healthcare. Proven track record delivering $2M+ in annual savings and 70% workflow automation through scalable AI solutions. PSPO II certified with expertise in regulated environments.
   </p>
   <div class="hero-actions">
-    <a href="#projects" class="btn-primary">See What I've Built ↓</a>
-    <a href="#contact" class="btn-outline">Let's Talk</a>
+    <a href="#ai-projects" class="btn-primary">View AI Projects ↓</a>
+    <a href="#contact" class="btn-outline">Contact Me</a>
   </div>
   <div class="hero-stats">
     <div class="hero-stat">
-      <div class="number">10<span>+</span></div>
-      <div class="label">Years in Tech Recruiting</div>
+      <div class="number">7<span>+</span></div>
+      <div class="label">Years in Tech</div>
     </div>
     <div class="hero-stat">
-      <div class="number">IC5–IC7</div>
-      <div class="label">Engineering Level Focus</div>
+      <div class="number">$2M<span>+</span></div>
+      <div class="label">Annual Cost Savings</div>
     </div>
     <div class="hero-stat">
-      <div class="number">5<span>+</span></div>
-      <div class="label">AI Tools Built</div>
+      <div class="number">70<span>%</span></div>
+      <div class="label">Workflow Automation</div>
     </div>
     <div class="hero-stat">
-      <div class="number">Meta</div>
-      <div class="label">Most Recent: Sr. Sourcer</div>
+      <div class="number">PSPO II</div>
+      <div class="label">Certified Product Owner</div>
     </div>
   </div>
 </header>
@@ -962,34 +1014,35 @@ footer {
 <section id="about">
   <div class="reveal">
     <span class="section-label">// About</span>
-    <h2 class="section-title">Recruiter × Builder</h2>
+    <h2 class="section-title">Data and AI Product Leader</h2>
   </div>
   <div class="about-grid">
     <div class="about-text reveal reveal-delay-1">
       <p>
-        Most recruiters source candidates. <strong>I source, build tools to source better, then automate the rest.</strong> After years of hiring the most senior AI and systems engineers at Meta, Citrix, Cisco, and beyond, I started building the tools I wished I had.
+        <strong>Strategic AI Product Manager</strong> with expertise in regulated environments including Healthcare (HIPAA), Pharma (cGMP), Telecom and FinTech. Combines deep technical expertise in Generative AI, MLOps, and data engineering with strong product leadership from vision and roadmapping through stakeholder alignment, Agile execution, and post-launch governance.
       </p>
       <p>
-        I'm fluent in frontier LLMs — <strong>Claude Opus, Sonnet, and Haiku</strong>, <strong>GPT-5o</strong>, <strong>Gemini</strong> — and I use them daily not just for research, but for building real products: Chrome extensions, MCP servers, agentic automations, and fully orchestrated recruiting pipelines.
+        Passionate about driving AI adoption that is <strong>ethical, impactful, and aligned with business goals</strong>. Proven ability to translate complex healthcare challenges into scalable AI solutions that deliver measurable outcomes. Comfortable wearing multiple hats, moving fast, and building from zero-to-one in dynamic environments.
       </p>
       <p>
-        My approach is simple: <strong>deep technical calibration</strong> meets <strong>AI-native execution</strong>. I understand the systems these engineers build because I build with the same tools they do. That's how you close an IC7 with competing offers from OpenAI and Citadel.
+        <strong>Core focus areas:</strong> Cost optimization, supply chain analytics, risk & compliance (HIPAA, GDPR, cGMP), financial modeling, and AI governance. Experience with enterprise data products serving 1200+ users and implementing resource allocation frameworks.
       </p>
       <div class="tag-cloud">
-        <span class="tag highlight">Claude Opus</span>
-        <span class="tag highlight">GPT-5o</span>
-        <span class="tag highlight">Gemini</span>
-        <span class="tag">Vibe Coding</span>
-        <span class="tag">n8n</span>
-        <span class="tag">OpenClaw</span>
-        <span class="tag">MCP Servers</span>
-        <span class="tag">CLI Scripting</span>
-        <span class="tag">Chrome Extensions</span>
-        <span class="tag">C++ / Distributed Systems</span>
-        <span class="tag">LLM Infrastructure</span>
-        <span class="tag">AI/ML Hiring</span>
-        <span class="tag">PhD Pipelines</span>
-        <span class="tag">Boolean & X-ray</span>
+        <span class="tag highlight">Generative AI</span>
+        <span class="tag highlight">LLMs & RAG</span>
+        <span class="tag highlight">Agentic AI</span>
+        <span class="tag">MLOps</span>
+        <span class="tag">Data Engineering</span>
+        <span class="tag">Python & SQL</span>
+        <span class="tag">GCP & AWS</span>
+        <span class="tag">Apache Airflow</span>
+        <span class="tag">Kafka</span>
+        <span class="tag">Financial Modeling</span>
+        <span class="tag">ROI Analysis</span>
+        <span class="tag">HIPAA/GDPR</span>
+        <span class="tag">cGMP Compliance</span>
+        <span class="tag">Agile/Scrum</span>
+        <span class="tag">PSPO II</span>
       </div>
     </div>
     <div class="terminal reveal reveal-delay-2">
@@ -997,22 +1050,20 @@ footer {
         <div class="terminal-dot r"></div>
         <div class="terminal-dot y"></div>
         <div class="terminal-dot g"></div>
-        <span>pranav@portfolio ~ /recruiting-ai</span>
+        <span>sana@mckesson ~ /ai-product-management</span>
       </div>
       <div class="terminal-body">
-        <span class="comment"># Morning workflow — fully automated</span><br><br>
-        <span class="prompt">$</span> openclaw <span class="flag">--triage</span> inbox <span class="flag">--draft-replies</span><br>
-        <span class="output">→ 14 emails triaged, 6 drafts ready</span><br><br>
-        <span class="prompt">$</span> openclaw <span class="flag">--prescreen</span> <span class="str">"ML Infra IC6"</span><br>
-        <span class="output">→ 3 candidates scheduled for Thursday</span><br><br>
-        <span class="prompt">$</span> openalex-pipeline <span class="flag">--domain</span> <span class="str">"distributed ML"</span> \<br>
-        &nbsp;&nbsp;<span class="flag">--github-sniff</span> <span class="flag">--export</span> xlsx<br>
-        <span class="output">→ 47 PhD authors ranked, 12 GitHub-active</span><br><br>
-        <span class="prompt">$</span> mcp-semanticscholar <span class="flag">--cite-network</span> \<br>
-        &nbsp;&nbsp;<span class="flag">--filter</span> <span class="str">"non-industry"</span> <span class="flag">--enrich</span><br>
-        <span class="output">→ Citation graph built, 8 warm leads</span><br><br>
-        <span class="comment"># Total time: 12 minutes</span><br>
-        <span class="comment"># Before automation: ~4 hours</span>
+        <span class="comment"># Healthcare AI Product Strategy</span><br><br>
+        <span class="prompt">$</span> analyze_healthcare_data <span class="flag">--compliance</span> HIPAA<br>
+        <span class="output">→ Data governance implemented, PII secured</span><br><br>
+        <span class="prompt">$</span> build_rag_pipeline <span class="flag">--domain</span> <span class="str">"clinical_docs"</span> \<br>
+        &nbsp;&nbsp;<span class="flag">--vector-db</span> Milvus <span class="flag">--llm</span> PaLM2<br>
+        <span class="output">→ 70% document processing automated</span><br><br>
+        <span class="prompt">$</span> optimize_costs <span class="flag">--team</span> FinOps <span class="flag">--cloud</span> GCP<br>
+        <span class="output">→ $2M annual compute savings achieved</span><br><br>
+        <span class="prompt">$</span> deploy_agentic_workflow <span class="flag">--tool</span> LangGraph<br>
+        <span class="output">→ Multi-agent system live, 60% manual oversight reduced</span><br><br>
+        <span class="comment"># Results: Faster decisions, lower costs, compliance assured</span>
       </div>
     </div>
   </div>
@@ -1020,62 +1071,50 @@ footer {
 
 <div class="section-divider"></div>
 
-<!-- ═══════════════ AI TOOLKIT ═══════════════ -->
-<section id="toolkit">
+<!-- ═══════════════ DATA PROJECTS ═══════════════ -->
+<section id="data-projects">
   <div class="reveal">
-    <span class="section-label">// AI Toolkit</span>
-    <h2 class="section-title">My AI Stack</h2>
-    <p class="section-desc">The frontier models and automation platforms I use daily to build, ship, and recruit.</p>
+    <span class="section-label">// Data Projects</span>
+    <h2 class="section-title">Data & Analytics Engineering</h2>
+    <p class="section-desc">Enterprise data solutions with healthcare-grade compliance and governance.</p>
   </div>
   <div class="toolkit-scroll-wrapper reveal reveal-delay-1">
     <div class="toolkit-row">
       <div class="tool-card">
-        <span class="tool-icon">🟣</span>
-        <h4>Claude (Opus, Sonnet, Haiku)</h4>
-        <p>Primary LLM for deep reasoning, code generation, candidate analysis, and vibe-coding full-stack tools.</p>
-        <span class="tool-badge llm">LLM</span>
-      </div>
-      <div class="tool-card">
-        <span class="tool-icon">🟢</span>
-        <h4>GPT-5o</h4>
-        <p>Used for multi-modal candidate research, outreach generation, and rapid content drafting.</p>
-        <span class="tool-badge llm">LLM</span>
-      </div>
-      <div class="tool-card">
-        <span class="tool-icon">🔵</span>
-        <h4>Gemini</h4>
-        <p>Long-context analysis of technical papers, cross-referencing candidate portfolios and publications.</p>
-        <span class="tool-badge llm">LLM</span>
-      </div>
-      <div class="tool-card">
-        <span class="tool-icon">🔧</span>
-        <h4>OpenClaw</h4>
-        <p>Full process automation engine — email triage, prescreen scheduling, candidate vetting, end-to-end.</p>
-        <span class="tool-badge auto">Automation</span>
+        <span class="tool-icon">🔐</span>
+        <h4>PII/PHI Data Governance</h4>
+        <p>Vertex AI pipeline using fine-tuned LLMs to automatically profile, classify, and tag sensitive fields across streaming/batch datasets.</p>
+        <span class="tool-badge dev">Data Governance</span>
       </div>
       <div class="tool-card">
         <span class="tool-icon">⚡</span>
-        <h4>n8n</h4>
-        <p>Agentic workflow orchestration connecting LLMs, databases, and recruiting platforms in automated pipelines.</p>
-        <span class="tool-badge auto">Automation</span>
+        <h4>Real-time Kafka Pipelines</h4>
+        <p>Engineered streaming pipelines in Python integrated with ELK stack, optimizing SQL queries across multiple databases.</p>
+        <span class="tool-badge auto">Real-time</span>
       </div>
       <div class="tool-card">
-        <span class="tool-icon">🧩</span>
-        <h4>MCP Servers</h4>
-        <p>Custom Model Context Protocol servers connecting LLMs to live data sources like Semantic Scholar.</p>
-        <span class="tool-badge dev">Dev</span>
+        <span class="tool-icon">☁️</span>
+        <h4>GCP Cloud Migration</h4>
+        <p>Migrated from on-prem Hadoop to GCP BigQuery with IAM security, HIPAA compliance, and metadata cataloging in Colibra.</p>
+        <span class="tool-badge dev">Cloud</span>
       </div>
       <div class="tool-card">
-        <span class="tool-icon">💻</span>
-        <h4>Vibe Coding</h4>
-        <p>AI-assisted development with Claude and Cursor — shipping Chrome extensions, pipelines, and tools at speed.</p>
-        <span class="tool-badge dev">Dev</span>
+        <span class="tool-icon">📊</span>
+        <h4>Apache Airflow Orchestration</h4>
+        <p>Built 100+ DAGs on GCP to automate data workflows with integrated monitoring dashboards and Slack API alerts.</p>
+        <span class="tool-badge auto">Orchestration</span>
       </div>
       <div class="tool-card">
-        <span class="tool-icon">▸_</span>
-        <h4>CLI Scripting</h4>
-        <p>Shell automation, data pipelines, and batch processing for sourcing, enrichment, and candidate ops.</p>
-        <span class="tool-badge dev">Dev</span>
+        <span class="tool-icon">🏥</span>
+        <h4>HIPAA Compliance Framework</h4>
+        <p>Implemented comprehensive data security, Privacy Impact Assessments (PIA), and audit trails for healthcare data.</p>
+        <span class="tool-badge llm">Compliance</span>
+      </div>
+      <div class="tool-card">
+        <span class="tool-icon">📈</span>
+        <h4>Operational Dashboards</h4>
+        <p>MicroStrategy dashboards to monitor high-risk triggers with n8n workflows for automated alerting and incident response.</p>
+        <span class="tool-badge auto">Monitoring</span>
       </div>
     </div>
   </div>
@@ -1083,147 +1122,97 @@ footer {
 
 <div class="section-divider"></div>
 
-<!-- ═══════════════ PROJECTS ═══════════════ -->
-<section id="projects">
+<!-- ═══════════════ AI PROJECTS ═══════════════ -->
+<section id="ai-projects">
   <div class="reveal">
-    <span class="section-label">// Projects</span>
-    <h2 class="section-title">What I've Built</h2>
-    <p class="section-desc">Real tools solving real recruiting problems — built with AI, shipped by me.</p>
+    <span class="section-label">// AI Projects</span>
+    <h2 class="section-title">AI/ML Product Leadership</h2>
+    <p class="section-desc">Generative AI and Agentic solutions delivering measurable business impact.</p>
   </div>
 
   <div class="projects-grid">
-    <!-- Project 1: OpenAlex PhD Pipeline -->
+    <!-- Project 1: GenAI Co-pilot -->
     <div class="project-card reveal">
       <div class="project-info">
-        <div class="project-tag">Chrome Extension</div>
-        <h3>OpenAlex PhD Pipeline</h3>
+        <div class="project-tag">Generative AI</div>
+        <h3>GenAI Support Co-pilot</h3>
         <p>
-          A Chrome extension that scrapes OpenAlex for PhD authors, builds citation networks around target researchers and papers, runs a "GitHub sniff test" to evaluate each author's engineering activity, and exports a ranked Excel spreadsheet filtered for non-industry candidates — sorted by GitHub activity and SWE relevance.
+          Developed a GenAI co-pilot leveraging RAG with multi-step validation for precise information retrieval. Reduced average internal support ticket resolution time by 50% while minimizing inaccuracies through validation layers.
         </p>
         <div class="project-tech">
-          <span>Chrome Extension</span>
-          <span>OpenAlex API</span>
-          <span>GitHub API</span>
-          <span>Citation Networks</span>
-          <span>Excel Export</span>
-          <span>Vibe Coded</span>
+          <span>RAG Architecture</span>
+          <span>Vector Databases</span>
+          <span>LLM Fine-tuning</span>
+          <span>Validation Layers</span>
+          <span>ServiceNow Integration</span>
         </div>
-        <a href="https://github.com/pranavgandhirecruiting-star/OpenAlexChromeExtension" target="_blank" class="project-github">
-          <svg viewBox="0 0 16 16"><path d="M8 0C3.58 0 0 3.58 0 8c0 3.54 2.29 6.53 5.47 7.59.4.07.55-.17.55-.38 0-.19-.01-.82-.01-1.49-2.01.37-2.53-.49-2.69-.94-.09-.23-.48-.94-.82-1.13-.28-.15-.68-.52-.01-.53.63-.01 1.08.58 1.23.82.72 1.21 1.87.87 2.33.66.07-.52.28-.87.51-1.07-1.78-.2-3.64-.89-3.64-3.95 0-.87.31-1.59.82-2.15-.08-.2-.36-1.02.08-2.12 0 0 .67-.21 2.2.82.64-.18 1.32-.27 2-.27.68 0 1.36.09 2 .27 1.53-1.04 2.2-.82 2.2-.82.44 1.1.16 1.92.08 2.12.51.56.82 1.27.82 2.15 0 3.07-1.87 3.75-3.65 3.95.29.25.54.73.54 1.48 0 1.07-.01 1.93-.01 2.2 0 .21.15.46.55.38A8.013 8.013 0 0016 8c0-4.42-3.58-8-8-8z"/></svg>
-          View on GitHub <span class="arrow">→</span>
-        </a>
       </div>
       <div class="project-visual">
-        <span class="comment">// OpenAlex PhD Pipeline — output</span><br><br>
-        <span class="kw">query</span>: <span class="str">"distributed ML systems"</span><br>
-        <span class="kw">authors_found</span>: <span class="num">142</span><br>
-        <span class="kw">citation_network</span>: <span class="num">1,847</span> papers mapped<br>
-        <span class="kw">github_sniff_pass</span>: <span class="num">38</span> authors<br>
-        <span class="kw">industry_filtered</span>: <span class="num">12</span> removed<br>
-        <span class="kw">final_ranked_export</span>: <span class="num">26</span> candidates<br><br>
-        <span class="fn">→</span> <span class="str">PhD_Pipeline_Results.xlsx</span><br>
-        <span class="comment">  Columns: Name, H-Index, GitHub Score,</span><br>
-        <span class="comment">  Top Papers, University, Contact</span>
+        <span class="comment">// GenAI Co-pilot — Architecture</span><br><br>
+        <span class="kw">query</span>: <span class="str">"network outage resolution steps"</span><br>
+        <span class="kw">rag_retrieval</span>: <span class="num">15</span> relevant documents<br>
+        <span class="kw">validation_steps</span>: <span class="num">3</span>-layer accuracy check<br>
+        <span class="kw">response_generated</span>: <span class="num">98</span>% confidence<br>
+        <span class="kw">resolution_time</span>: <span class="num">50</span>% reduction<br><br>
+        <span class="fn">→</span> <span class="str">Support_Co-pilot_Metrics.pdf</span><br>
+        <span class="comment">  ROI: $500K annual support cost savings</span>
       </div>
     </div>
 
-    <!-- Project 2: Semantic Scholar MCP Server -->
+    <!-- Project 2: Agentic AI Workflows -->
     <div class="project-card reveal">
       <div class="project-info">
-        <div class="project-tag">MCP Server</div>
-        <h3>Semantic Scholar MCP Server</h3>
+        <div class="project-tag">Agentic AI</div>
+        <h3>Multi-Agent Document Processing</h3>
         <p>
-          A custom Model Context Protocol server that gives any LLM — Claude, GPT-5o, Gemini — live access to Semantic Scholar's research graph. Build citation networks, discover PhD talent, and enrich candidate profiles directly from your AI conversation, with the same power as the Chrome extension but integrated into your LLM workflow.
+          Led development of Agentic AI solutions leveraging Milvus for vector-based document retrieval and LangGraph for orchestrating multi-agent workflows. Automated 70% of real-estate document processing with 150+ user stories managed.
         </p>
         <div class="project-tech">
-          <span>MCP Protocol</span>
-          <span>Semantic Scholar API</span>
-          <span>LLM Integration</span>
-          <span>Citation Graphs</span>
-          <span>Node.js</span>
+          <span>LangGraph</span>
+          <span>Milvus</span>
+          <span>Multi-Agent Systems</span>
+          <span>Document Processing</span>
+          <span>n8n Automation</span>
         </div>
-        <a href="https://github.com/pranavgandhirecruiting-star/semantic-scholar-mcp" target="_blank" class="project-github">
-          <svg viewBox="0 0 16 16"><path d="M8 0C3.58 0 0 3.58 0 8c0 3.54 2.29 6.53 5.47 7.59.4.07.55-.17.55-.38 0-.19-.01-.82-.01-1.49-2.01.37-2.53-.49-2.69-.94-.09-.23-.48-.94-.82-1.13-.28-.15-.68-.52-.01-.53.63-.01 1.08.58 1.23.82.72 1.21 1.87.87 2.33.66.07-.52.28-.87.51-1.07-1.78-.2-3.64-.89-3.64-3.95 0-.87.31-1.59.82-2.15-.08-.2-.36-1.02.08-2.12 0 0 .67-.21 2.2.82.64-.18 1.32-.27 2-.27.68 0 1.36.09 2 .27 1.53-1.04 2.2-.82 2.2-.82.44 1.1.16 1.92.08 2.12.51.56.82 1.27.82 2.15 0 3.07-1.87 3.75-3.65 3.95.29.25.54.73.54 1.48 0 1.07-.01 1.93-.01 2.2 0 .21.15.46.55.38A8.013 8.013 0 0016 8c0-4.42-3.58-8-8-8z"/></svg>
-          View on GitHub <span class="arrow">→</span>
-        </a>
       </div>
       <div class="project-visual">
-        <span class="comment">// MCP Server — live in Claude</span><br><br>
-        <span class="kw">User</span>: Find PhD researchers in LLM<br>
-        &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;inference optimization<br><br>
-        <span class="kw">Claude</span> → <span class="fn">mcp.semanticscholar</span><br>
-        &nbsp;&nbsp;.<span class="fn">search_authors</span>(<span class="str">"LLM inference"</span>)<br>
-        &nbsp;&nbsp;.<span class="fn">build_cite_network</span>(depth=<span class="num">2</span>)<br>
-        &nbsp;&nbsp;.<span class="fn">filter</span>(<span class="str">"non-industry"</span>)<br>
-        &nbsp;&nbsp;.<span class="fn">enrich_profiles</span>()<br><br>
-        <span class="fn">→</span> <span class="num">8</span> warm leads with contact info<br>
-        <span class="fn">→</span> Citation context for personalized outreach
+        <span class="comment">// Multi-Agent System — Flow</span><br><br>
+        <span class="kw">document_input</span>: <span class="num">1000</span> real-estate files<br>
+        <span class="kw">agent_1</span>: Document parser & classifier<br>
+        <span class="kw">agent_2</span>: Data extractor (vector search)<br>
+        <span class="kw">agent_3</span>: Compliance validator<br>
+        <span class="kw">agent_4</span>: Report generator<br><br>
+        <span class="fn">→</span> Processing time: <span class="num">70</span>% faster<br>
+        <span class="fn">→</span> Manual effort: <span class="num">60</span>% reduction<br>
+        <span class="fn">→</span> Accuracy: <span class="num">95</span>% validated output
       </div>
     </div>
 
-    <!-- Project 3: OpenAlex MCP Server -->
+    <!-- Project 3: Cost Optimization -->
     <div class="project-card reveal">
       <div class="project-info">
-        <div class="project-tag">MCP Server</div>
-        <h3>OpenAlex MCP Server</h3>
+        <div class="project-tag">Financial Analytics</div>
+        <h3>Cloud Cost Optimization</h3>
         <p>
-          A Model Context Protocol server that connects LLMs directly to the OpenAlex academic database with GitHub integration. Search works, authors, and institutions, build citation graphs, and evaluate researchers' engineering signal — all from within your AI conversation. The MCP counterpart to the Chrome extension pipeline.
+          Defined GTM strategy across 5 enterprise Data Products serving 1200+ users. Implemented resource allocation framework and cloud optimization, delivering $2M in annual compute cost savings for FinOps team.
         </p>
         <div class="project-tech">
-          <span>MCP Protocol</span>
-          <span>OpenAlex API</span>
-          <span>GitHub API</span>
-          <span>Python</span>
-          <span>Docker</span>
-        </div>
-        <a href="https://github.com/pranavgandhirecruiting-star/openalex-mcp-server" target="_blank" class="project-github">
-          <svg viewBox="0 0 16 16"><path d="M8 0C3.58 0 0 3.58 0 8c0 3.54 2.29 6.53 5.47 7.59.4.07.55-.17.55-.38 0-.19-.01-.82-.01-1.49-2.01.37-2.53-.49-2.69-.94-.09-.23-.48-.94-.82-1.13-.28-.15-.68-.52-.01-.53.63-.01 1.08.58 1.23.82.72 1.21 1.87.87 2.33.66.07-.52.28-.87.51-1.07-1.78-.2-3.64-.89-3.64-3.95 0-.87.31-1.59.82-2.15-.08-.2-.36-1.02.08-2.12 0 0 .67-.21 2.2.82.64-.18 1.32-.27 2-.27.68 0 1.36.09 2 .27 1.53-1.04 2.2-.82 2.2-.82.44 1.1.16 1.92.08 2.12.51.56.82 1.27.82 2.15 0 3.07-1.87 3.75-3.65 3.95.29.25.54.73.54 1.48 0 1.07-.01 1.93-.01 2.2 0 .21.15.46.55.38A8.013 8.013 0 0016 8c0-4.42-3.58-8-8-8z"/></svg>
-          View on GitHub <span class="arrow">→</span>
-        </a>
-      </div>
-      <div class="project-visual">
-        <span class="comment">// OpenAlex MCP — live in any LLM</span><br><br>
-        <span class="kw">User</span>: Find researchers publishing on<br>
-        &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;CUDA kernel optimization<br><br>
-        <span class="kw">Claude</span> → <span class="fn">mcp.openalex</span><br>
-        &nbsp;&nbsp;.<span class="fn">search_works</span>(<span class="str">"CUDA kernels"</span>)<br>
-        &nbsp;&nbsp;.<span class="fn">get_author_details</span>()<br>
-        &nbsp;&nbsp;.<span class="fn">github_activity_check</span>()<br>
-        &nbsp;&nbsp;.<span class="fn">rank_by_engineering_signal</span>()<br><br>
-        <span class="fn">→</span> <span class="num">15</span> researchers with GitHub profiles<br>
-        <span class="fn">→</span> <span class="num">6</span> with active open-source contributions
-      </div>
-    </div>
-
-    <!-- Project 4: OpenClaw Recruiting Automation -->
-    <div class="project-card reveal">
-      <div class="project-info">
-        <div class="project-tag">Full Process Automation</div>
-        <h3>OpenClaw Recruiting Pipeline</h3>
-        <p>
-          A complete implementation of OpenClaw that automates the entire recruiting lifecycle. Email triage and intelligent message drafting. Prescreen scheduling with calendar integration. Candidate vetting with LLM-powered evaluation. From inbox to offer, every step orchestrated — reducing hours of manual work to minutes of supervised automation.
-        </p>
-        <div class="project-tech">
-          <span>OpenClaw</span>
-          <span>Email Automation</span>
-          <span>Calendar Integration</span>
-          <span>LLM Evaluation</span>
-          <span>n8n</span>
-          <span>End-to-End</span>
+          <span>Financial Modeling</span>
+          <span>ROI Analysis</span>
+          <span>Cloud Optimization</span>
+          <span>Resource Allocation</span>
+          <span>GTM Strategy</span>
         </div>
       </div>
       <div class="project-visual">
-        <span class="comment">// OpenClaw — daily automation log</span><br><br>
-        <span class="fn">06:00</span> <span class="kw">email.triage</span><br>
-        &nbsp;&nbsp;→ <span class="num">47</span> emails sorted, <span class="num">12</span> drafts ready<br><br>
-        <span class="fn">06:02</span> <span class="kw">prescreen.schedule</span><br>
-        &nbsp;&nbsp;→ <span class="num">4</span> candidates booked for week<br><br>
-        <span class="fn">06:03</span> <span class="kw">candidate.vet</span><br>
-        &nbsp;&nbsp;→ <span class="num">9</span> profiles evaluated<br>
-        &nbsp;&nbsp;→ <span class="num">3</span> flagged as strong IC6+ fit<br><br>
-        <span class="fn">06:04</span> <span class="kw">outreach.generate</span><br>
-        &nbsp;&nbsp;→ Personalized messages queued<br><br>
-        <span class="comment">// Entire pipeline: 4 min (supervised)</span>
+        <span class="comment">// Cloud Cost Optimization — Results</span><br><br>
+        <span class="kw">data_products</span>: <span class="num">5</span> enterprise products<br>
+        <span class="kw">users_served</span>: <span class="num">1200</span>+ active users<br>
+        <span class="kw">cost_analysis</span>: <span class="num">30</span>% waste identified<br>
+        <span class="kw">optimization_plan</span>: Resource allocation framework<br>
+        <span class="kw">annual_savings</span>: $<span class="num">2,000,000</span><br><br>
+        <span class="fn">→</span> <span class="str">FinOps_Report_Q4.pdf</span><br>
+        <span class="comment">  Cloud spend efficiency: 40% improvement</span>
       </div>
     </div>
   </div>
@@ -1235,80 +1224,98 @@ footer {
 <section id="experience">
   <div class="reveal">
     <span class="section-label">// Experience</span>
-    <h2 class="section-title">Career Timeline</h2>
-    <p class="section-desc">A decade of senior technical recruiting across the biggest names in tech.</p>
+    <h2 class="section-title">Professional Journey</h2>
+    <p class="section-desc">Progressive leadership in AI/ML product management across regulated industries.</p>
   </div>
 
   <div class="timeline reveal reveal-delay-1">
-    <!-- Meta -->
+    <!-- Bell Canada - Product Owner -->
     <div class="timeline-item">
       <div class="tl-header">
-        <span class="tl-company">Meta Platforms</span>
-        <span class="tl-role">— Senior Technical Sourcer/Recruiter</span>
+        <span class="tl-company">Bell Canada</span>
+        <span class="tl-role">— Product Owner - AI/Data Engineering</span>
       </div>
-      <div class="tl-meta">Sep 2021 – Jan 2026 · New York, NY · IC5–IC7 Engineering (AI/ML, Distributed Systems, Product, Mobile)</div>
+      <div class="tl-meta">Jan 2025 – Present · Telecom · Canada</div>
       <ul class="tl-bullets">
-        <li>Recruited senior engineers across ML generalist SWE, AI infrastructure, distributed compute, backend systems, and high-performance services.</li>
-        <li>Built pipelines targeting elite global technical talent (OpenAI, DeepMind, Anthropic, xAI).</li>
-        <li>Partnered with Directors, Senior Staff, and Principal Engineers to calibrate deeply technical roles involving LLM training, large-scale ranking/recommendation systems, ML infrastructure, and large-scale C++ backend architecture.</li>
-        <li>Led senior-level hiring for multiple mission-critical orgs: GenAI, Monetization, Capacity/Infra Planning, Reels Ranking, and Regulatory Engineering.</li>
-        <li>Executed technical screens for distributed systems, ML infra, large-scale C++ systems, and high-throughput inference systems.</li>
+        <li>Reduced average internal support ticket resolution time by 50% by developing a GenAI co-pilot using RAG with multi-step validation</li>
+        <li>Led delivery of real-time operational dashboards in MicroStrategy to monitor high-risk triggers with n8n workflows for automated alerting</li>
+        <li>Defined GTM strategy across 5 enterprise Data Products serving 1200+ users, implementing resource allocation framework and cloud optimization</li>
+        <li>Established product vision, user stories, and roadmap aligned with financial, legal, and real-estate teams' needs</li>
+        <li>Managed backlog of 150+ user stories for Agentic AI solutions leveraging Milvus and LangGraph</li>
       </ul>
       <div class="tl-highlight">
-        <p><strong>Key wins:</strong> Delivered 20–30 vetted senior ML/Infra candidates weekly. Closed multiple IC6–IC7 engineers against competing hedge fund & elite AI lab offers. Improved onsite pass-through rates by ~12–15%. Ranked top-tier across sourcing output, quality-of-hire, and hiring manager satisfaction.</p>
+        <p><strong>Key achievement:</strong> Delivered $2M in annual compute cost savings for FinOps team through cloud optimization and resource allocation framework.</p>
       </div>
     </div>
 
-    <!-- Citrix -->
+    <!-- Bell Canada - Scrum Master -->
     <div class="timeline-item">
       <div class="tl-header">
-        <span class="tl-company">Citrix Systems</span>
-        <span class="tl-role">— Lead Technical Recruiter</span>
+        <span class="tl-company">Bell Canada</span>
+        <span class="tl-role">— Scrum Master - AI/Data Engineering</span>
       </div>
-      <div class="tl-meta">Feb 2020 – Sep 2021 · Raleigh, NC · Cloud, Security, DevOps/SRE, SWE (IC & Management)</div>
+      <div class="tl-meta">July 2024 – Dec 2024 · Telecom · Canada</div>
       <ul class="tl-bullets">
-        <li>Led full-cycle recruiting across Cloud/Cloud-Native SWE, Security, DevOps/SRE, and Product Engineering orgs.</li>
-        <li>Owned 30–40 reqs across 8–10 hiring managers, driving calibration, sourcing strategy, interviews, offers, and closing.</li>
-        <li>Recruited senior backend, infra, and SRE talent (C++/Go/Java, distributed systems, cloud-native infra).</li>
-        <li>Built high-bar pipelines across multiple U.S. markets (Raleigh, Ft. Lauderdale, Austin, Bay Area).</li>
-        <li>Managed and mentored a team of 5 sourcers, leading pipeline reviews and sourcing strategy sessions.</li>
+        <li>Facilitated Agile Ceremonies for 3 concurrent squads delivering internal GenAI-powered chatbot</li>
+        <li>Maintained 94% sprint commitment achievement rate and consistent team velocity</li>
+        <li>Guided Agile pods (3 squads, 20+ members) on AI/ML best practices and agile methodologies</li>
+        <li>Introduced AI powered Jira board automation that reduced manual KPI tracking efforts by 30%</li>
       </ul>
     </div>
 
-    <!-- RPO -->
+    <!-- Bell Canada - Data Engineer -->
     <div class="timeline-item">
       <div class="tl-header">
-        <span class="tl-company">Bosch & AXA Equitable</span>
-        <span class="tl-role">— RPO (Contract)</span>
+        <span class="tl-company">Bell Canada</span>
+        <span class="tl-role">— Data Engineer</span>
       </div>
-      <div class="tl-meta">Feb 2018 – Feb 2020 · Remote</div>
+      <div class="tl-meta">Jan 2023 – July 2024 · Telecom · Canada</div>
+      <ul class="tl-bullets">
+        <li>Architected and deployed Vertex AI-based data quality pipeline using fine-tuned LLMs (PaLM 2) for PII/PHI classification</li>
+        <li>Built and managed 100+ Apache Airflow DAGs on GCP to automate data workflows with integrated monitoring</li>
+        <li>Engineered real-time Kafka streaming pipelines in Python integrated with ELK stack</li>
+        <li>Migrated data from on-prem Hadoop to GCP BigQuery with HIPAA compliance and metadata cataloging</li>
+      </ul>
     </div>
 
-    <!-- Cisco -->
+    <!-- Vector Institute -->
     <div class="timeline-item">
       <div class="tl-header">
-        <span class="tl-company">Cisco Systems</span>
-        <span class="tl-role">— Sr. Technical Sourcer</span>
+        <span class="tl-company">Vector Institute for AI</span>
+        <span class="tl-role">— AI Education Associate</span>
       </div>
-      <div class="tl-meta">Nov 2015 – Feb 2018 · Contract · Morrisville, NC</div>
+      <div class="tl-meta">Sept 2022 – Dec 2022 · AI Research · Canada</div>
+      <ul class="tl-bullets">
+        <li>Designed and delivered Machine Learning training programs for FastLane startup initiative</li>
+        <li>Covered courses: Deep Learning, Project Management with AI, and responsible AI governance</li>
+      </ul>
     </div>
 
-    <!-- Resolvit -->
+    <!-- Amazon -->
     <div class="timeline-item">
       <div class="tl-header">
-        <span class="tl-company">Resolvit</span>
-        <span class="tl-role">— Technical Recruiter</span>
+        <span class="tl-company">Amazon</span>
+        <span class="tl-role">— Senior Program Associate</span>
       </div>
-      <div class="tl-meta">Apr 2015 – Nov 2015 · Raleigh, NC</div>
+      <div class="tl-meta">July 2021 – Dec 2021 · FinTech · India</div>
+      <ul class="tl-bullets">
+        <li>Supported product and business leaders through customer analytics and market insights</li>
+        <li>Implemented NLP-based sentiment analysis on app reviews using Python for data-driven decisions</li>
+      </ul>
     </div>
 
-    <!-- DynPro -->
+    <!-- Bhopal Glues -->
     <div class="timeline-item">
       <div class="tl-header">
-        <span class="tl-company">DynPro</span>
-        <span class="tl-role">— Market Research Analyst / Technical Recruiter</span>
+        <span class="tl-company">Bhopal Glues and Chemicals</span>
+        <span class="tl-role">— Business Analyst</span>
       </div>
-      <div class="tl-meta">May 2011 – Apr 2015 · Raleigh, NC</div>
+      <div class="tl-meta">Apr 2019 – June 2021 · Pharmaceutical · India</div>
+      <ul class="tl-bullets">
+        <li>Reduced FDA audit prep by 30% ensuring cGMP/GCP/GDP compliance via ERP implementations</li>
+        <li>Developed financial models and ROI analysis identifying cost-saving opportunities using SQL and Excel</li>
+        <li>Led ERP system implementations for QC workflows with ETL processes and data quality standards</li>
+      </ul>
     </div>
   </div>
 </section>
@@ -1320,35 +1327,35 @@ footer {
   <div class="reveal">
     <span class="section-label">// Contact</span>
     <h2 class="section-title">Let's Connect</h2>
-    <p class="section-desc">Whether you're hiring, looking to be hired, or want to talk AI-powered recruiting — I'm all ears.</p>
+    <p class="section-desc">Interested in AI/ML healthcare solutions, product leadership, or technical collaboration? Reach out.</p>
   </div>
   <div class="contact-grid reveal reveal-delay-1">
-    <a href="mailto:pranavgandhi.recruiting@gmail.com" class="contact-card">
+    <a href="mailto:khan17sana@gmail.com" class="contact-card">
       <div class="contact-icon">✉</div>
       <div>
         <div class="contact-label">Email</div>
-        <div class="contact-value">pranavgandhi.recruiting@gmail.com</div>
+        <div class="contact-value">khan17sana@gmail.com</div>
       </div>
     </a>
-    <a href="https://www.linkedin.com/in/pranavgandhifacebook" target="_blank" class="contact-card">
+    <a href="https://www.linkedin.com/in/sankshine" target="_blank" class="contact-card">
       <div class="contact-icon">in</div>
       <div>
         <div class="contact-label">LinkedIn</div>
-        <div class="contact-value">linkedin.com/in/pranavgandhifacebook</div>
+        <div class="contact-value">linkedin.com/in/sankshine</div>
       </div>
     </a>
-    <a href="https://github.com/pranavgandhirecruiting-star" target="_blank" class="contact-card">
+    <a href="https://github.com/sankshine" target="_blank" class="contact-card">
       <div class="contact-icon"><svg viewBox="0 0 16 16"><path d="M8 0C3.58 0 0 3.58 0 8c0 3.54 2.29 6.53 5.47 7.59.4.07.55-.17.55-.38 0-.19-.01-.82-.01-1.49-2.01.37-2.53-.49-2.69-.94-.09-.23-.48-.94-.82-1.13-.28-.15-.68-.52-.01-.53.63-.01 1.08.58 1.23.82.72 1.21 1.87.87 2.33.66.07-.52.28-.87.51-1.07-1.78-.2-3.64-.89-3.64-3.95 0-.87.31-1.59.82-2.15-.08-.2-.36-1.02.08-2.12 0 0 .67-.21 2.2.82.64-.18 1.32-.27 2-.27.68 0 1.36.09 2 .27 1.53-1.04 2.2-.82 2.2-.82.44 1.1.16 1.92.08 2.12.51.56.82 1.27.82 2.15 0 3.07-1.87 3.75-3.65 3.95.29.25.54.73.54 1.48 0 1.07-.01 1.93-.01 2.2 0 .21.15.46.55.38A8.013 8.013 0 0016 8c0-4.42-3.58-8-8-8z"/></svg></div>
       <div>
         <div class="contact-label">GitHub</div>
-        <div class="contact-value">pranavgandhirecruiting-star</div>
+        <div class="contact-value">github.com/sankshine</div>
       </div>
     </a>
-    <a href="tel:919-522-3885" class="contact-card">
+    <a href="tel:+1-437-833-9757" class="contact-card">
       <div class="contact-icon">📱</div>
       <div>
         <div class="contact-label">Phone</div>
-        <div class="contact-value">919-522-3885</div>
+        <div class="contact-value">+1 (437) 833-9757</div>
       </div>
     </a>
   </div>
@@ -1356,7 +1363,7 @@ footer {
 
 <!-- ═══════════════ FOOTER ═══════════════ -->
 <footer>
-  © 2026 Pranav Gandhi · Built with AI · New York, NY
+  © 2026 Sana Khan · Sr. Technical Product Manager Candidate · Healthcare AI/ML · Canada
 </footer>
 
 <!-- ═══════════════ SCRIPTS ═══════════════ -->
